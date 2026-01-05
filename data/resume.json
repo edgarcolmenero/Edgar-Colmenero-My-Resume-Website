@@ -1,143 +1,77 @@
 {
   "identity": {
-    "name": "Edgar Colmenero",
-    "descriptor": "Product-minded Full-Stack Software Engineer focused on reliable client delivery.",
-    "status": "Early-career full-stack engineer available for opportunities",
-    "focus": [
-      "Full-stack engineering",
-      "Client-facing delivery",
-      "Automation and scripting",
-      "Data-informed systems",
-      "Reliable user experiences"
-    ],
-    "metrics": {
-      "experience": 2,
-      "projects": 10,
-      "technologies": 12
-    }
+    "firstName": "Edgar",
+    "lastName": "Colmenero",
+    "headline": "Full-stack software engineer crafting reliable, production-ready systems with modern web technologies",
+    "availability": "Available for opportunities",
+    "cta": {
+      "primary": "Explore Work",
+      "secondary": "Connect"
+    },
+    "stats": [
+      { "id": "experience", "label": "Years Experience", "value": 2, "suffix": " yrs" },
+      { "id": "projects", "label": "Projects", "value": 10, "suffix": "+" },
+      { "id": "live", "label": "Live Systems", "value": 3 },
+      { "id": "uptime", "label": "Uptime Goal", "value": 100, "suffix": "%" }
+    ]
   },
-  "timeline": [
-    {
-      "title": "Full-Stack Software Engineer (Contract)",
-      "organization": "Ravi’s Import Warehouse",
-      "time": "2025 — Present",
-      "impact": "Building and maintaining production web applications that support pricing updates, catalog management, and internal order workflows for a wholesale client.",
-      "tags": ["React", "Node.js", "REST APIs", "PostgreSQL"]
-    },
-    {
-      "title": "Shift Manager",
-      "organization": "Adidas",
-      "time": "2025",
-      "impact": "Led floor operations, coordinated scheduling, and ensured consistent customer experience during high-traffic periods.",
-      "tags": ["Leadership", "Scheduling", "Customer experience", "Operations"]
-    },
-    {
-      "title": "Bilingual Financial Services Representative",
-      "organization": "Wells Fargo",
-      "time": "2024",
-      "impact": "Delivered English and Spanish customer support in a regulated environment, resolving complex account issues and documenting outcomes accurately.",
-      "tags": ["Customer support", "Compliance", "Bilingual", "Problem solving"]
-    },
-    {
-      "title": "Additional Leadership & Retail Experience",
-      "organization": "Walmart, CVS Pharmacy",
-      "time": "2021 — 2023",
-      "impact": "Managed team coverage, trained associates on inventory systems, and maintained compliance standards while supporting high-volume customer needs.",
-      "tags": ["Team leadership", "Inventory", "Training", "Compliance"]
-    }
-  ],
   "projects": [
     {
-      "name": "SwiftSend delivery portal",
+      "title": "SwiftSend",
+      "subtitle": "My Consulting Company",
+      "status": "Live",
       "description": "Consulting engagement to refine courier assignment flows, add tracking views, and stabilize order processing for a delivery services startup.",
-      "stack": ["JavaScript", "Node.js", "PostgreSQL", "REST APIs"],
-      "outcome": "Improved reliability of dispatch tasks and clarified status visibility for operators.",
-      "status": "live",
-      "image": ""
+      "tech": ["JavaScript", "Node.js", "PostgreSQL", "REST APIs"],
+      "outcome": "Improved dispatch reliability and clarified real-time status visibility for operations teams."
     },
     {
-      "name": "ShopRavis inventory & ordering",
-      "description": "Wholesale catalog and ordering interface with search, pricing updates, and basic analytics for Ravi’s Import Warehouse.",
-      "stack": ["React", "Node.js", "PostgreSQL", "Stripe"],
-      "outcome": "Delivered a stable storefront and internal tools to reduce manual data entry.",
-      "status": "live",
-      "image": ""
-    },
-    {
-      "name": "Realtor Demo Pro",
-      "description": "Front-end demo experience for real estate listings, featuring property search, map views, and lead capture forms.",
-      "stack": ["React", "CSS", "REST APIs", "Leaflet"],
-      "outcome": "Showcased ability to translate product requirements into interactive UI with clean data flows.",
-      "status": "prototype",
-      "image": ""
-    },
-    {
-      "name": "This resume site",
-      "description": "Data-driven personal site with Web Worker metrics, resilient loading, and structured resume data.",
-      "stack": ["HTML", "CSS", "Vanilla JS", "Web Workers"],
-      "outcome": "Demonstrates thoughtful defaults, accessibility, and transparent skill representation.",
-      "status": "live",
-      "image": ""
-    },
-    {
-      "name": "Inventory checklist automation",
-      "description": "Lightweight scripts to automate reconciliation of purchase orders and stock counts for small business clients.",
-      "stack": ["Python", "Pandas", "CSV", "REST APIs"],
-      "outcome": "Reduced manual spreadsheet work and improved accuracy of weekly inventory reports.",
-      "status": "in progress",
-      "image": ""
-    },
-    {
-      "name": "Client support knowledge base",
-      "description": "Single-page application for bilingual FAQs and guided workflows for customer service teams.",
-      "stack": ["JavaScript", "HTML", "CSS", "LocalStorage"],
-      "outcome": "Enabled faster responses and consistent documentation across English and Spanish teams.",
-      "status": "live",
-      "image": ""
-    },
-    {
-      "name": "Shift scheduling dashboard",
-      "description": "Tool to visualize shift coverage, manage time-off requests, and surface staffing gaps for retail managers.",
-      "stack": ["React", "Node.js", "SQLite", "Chart.js"],
-      "outcome": "Helped store leads adjust staffing based on peak hours and reduce overtime conflicts.",
-      "status": "prototype",
-      "image": ""
-    },
-    {
-      "name": "Academic data analysis toolkit",
-      "description": "Course project exploring data cleaning, visualization, and statistical summaries for public datasets.",
-      "stack": ["Python", "NumPy", "Pandas", "Matplotlib"],
-      "outcome": "Built confidence in analytical thinking and communicating findings with visuals.",
-      "status": "completed",
-      "image": ""
-    },
-    {
-      "name": "Accessibility-first UI components",
-      "description": "Set of reusable form and navigation components with keyboard and screen reader support.",
-      "stack": ["HTML", "CSS", "JavaScript", "ARIA"],
-      "outcome": "Improved usability of personal projects and ensured consistent patterns across pages.",
-      "status": "completed",
-      "image": ""
-    },
-    {
-      "name": "Portfolio content manager",
-      "description": "Simple CMS-style interface to manage project entries, tags, and media links for personal sites.",
-      "stack": ["Node.js", "Express", "SQLite", "REST APIs"],
-      "outcome": "Streamlined updates to project pages without manual HTML edits.",
-      "status": "in progress",
-      "image": ""
+      "title": "ShopRavi’s Wholesale & Retail",
+      "subtitle": "Ravi’s Import Warehouse",
+      "status": "Live",
+      "description": "Wholesale catalog and ordering interface featuring inventory search, pricing updates, and basic analytics for Ravi’s Import Warehouse.",
+      "tech": ["React", "Node.js", "PostgreSQL", "Stripe"],
+      "outcome": "Reduced manual data entry and delivered stable storefront tooling for a wholesale business."
     }
   ],
-  "accomplishments": [
-    "Shipped production full-stack features for real clients, translating requirements into reliable web applications.",
-    "Delivered bilingual customer support in finance, documenting regulated interactions accurately.",
-    "Led teams in retail settings, coordinating schedules and training associates on systems and processes.",
-    "Balanced academic work with engineering engagements, progressing from retail roles into full-stack development."
+  "capabilities": [
+    {
+      "title": "Full-Stack Development",
+      "items": ["React", "Next", "PostgreSQL", "REST APIs"]
+    },
+    {
+      "title": "Client Delivery",
+      "items": ["Stakeholder Analysis", "Requirements Communication", "Production Systems"]
+    },
+    {
+      "title": "Automation & Data",
+      "items": ["Data Systems", "Scripting", "Workflows", "Observability"]
+    }
   ],
-  "roadmap": [
+  "experience": [
+    {
+      "role": "Full-Stack Software Engineer",
+      "type": "Contract",
+      "company": "Ravi’s Import Warehouse",
+      "period": "2025 — Present",
+      "summary": "Building and maintaining production web applications supporting pricing updates, catalog management, and internal order workflows for a wholesale client."
+    },
+    {
+      "role": "Shift Manager",
+      "company": "Adidas",
+      "period": "2025",
+      "summary": "Led floor operations, coordinated scheduling, and ensured consistent customer experience during high-traffic periods."
+    },
+    {
+      "role": "Bilingual Financial Services Representative",
+      "company": "Wells Fargo",
+      "period": "2024",
+      "summary": "Delivered English and Spanish customer support in a regulated environment, resolving complex account issues and documenting outcomes accurately."
+    }
+  ],
+  "growth": [
     {
       "phase": "Now",
-      "summary": "Deepening full-stack fundamentals, polishing portfolio projects, and applying to software engineering roles focused on client delivery."
+      "summary": "Deepening full-stack fundamentals, polishing portfolio projects, and applying to software engineering roles focused on reliable client delivery."
     },
     {
       "phase": "Next",
@@ -145,7 +79,20 @@
     },
     {
       "phase": "Later",
-      "summary": "Growing into senior ownership of scalable architectures, leading reliability efforts, and mentoring teams through delivery."
+      "summary": "Growing into ownership of scalable architectures, leading reliability efforts, and mentoring through delivery."
     }
-  ]
+  ],
+  "contact": {
+    "headline": "Let's Connect",
+    "pitch": "Open to full-time software engineering roles focused on reliable delivery and systems thinking. Ready to contribute to teams that value clarity and ownership.",
+    "links": [
+      { "label": "Email", "href": "mailto:edgar.colmenero@gmail.com" },
+      { "label": "LinkedIn", "href": "https://www.linkedin.com/in/edgarcolmenero" },
+      { "label": "GitHub", "href": "https://github.com/edgarcolmenero" }
+    ]
+  },
+  "footer": {
+    "year": "2026",
+    "tagline": "Product-minded Full-Stack Software Engineer"
+  }
 }

@@ -3,107 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edgar Colmenero | Resume</title>
+  <title>Edgar Colmenero | Portfolio</title>
   <link rel="stylesheet" href="styles/core.css" />
   <link rel="stylesheet" href="styles/motion.css" />
   <script src="scripts/app.js" defer></script>
   <script src="scripts/interactions.js" defer></script>
 </head>
 <body>
-  <header class="top-bar">
-    <div class="top-bar__identity">
-      <h1 class="top-bar__name">Edgar Colmenero</h1>
-      <div class="top-bar__subtitle" aria-live="polite">
-        <span class="top-bar__role" data-role-placeholder>Role Placeholder</span>
-      </div>
+  <header class="floating-header" aria-label="Primary">
+    <div class="brand">
+      <span class="brand__mark" aria-hidden="true">EC</span>
+      <span class="brand__label">Edgar Colmenero</span>
     </div>
-    <nav class="top-bar__nav" aria-label="Primary">
-      <button class="nav-button" type="button" data-target="timeline">Timeline</button>
-      <button class="nav-button" type="button" data-target="projects">Projects</button>
-      <button class="nav-button" type="button" data-target="accomplishments">Accomplishments</button>
-      <button class="nav-button" type="button" data-target="roadmap">Roadmap</button>
+    <nav class="nav" aria-label="Section links">
+      <a class="nav__link" href="#projects">Projects</a>
+      <a class="nav__link" href="#skills">Skills</a>
+      <a class="nav__link" href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main class="layout" aria-live="polite">
-    <aside class="identity-panel" aria-label="Profile Overview">
-      <div class="identity-panel__header">
-        <h2 class="identity-panel__name">Edgar Colmenero</h2>
-        <p class="identity-panel__descriptor">Product-minded software engineer</p>
+  <main class="page">
+    <section class="hero section" id="top">
+      <div class="hero__content">
+        <div class="hero__badge" data-availability>Available for opportunities</div>
+        <h1 class="hero__title">
+          <span class="hero__name" data-first-name>Edgar</span>
+          <span class="hero__name hero__name--accent" data-last-name>Colmenero</span>
+        </h1>
+        <p class="hero__subtitle" data-headline>
+          Full-stack software engineer crafting reliable, production-ready systems with modern web technologies
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#projects" data-primary-cta>Explore Work</a>
+          <a class="button button--ghost" href="#contact" data-secondary-cta>Connect</a>
+        </div>
+        <div class="hero__stats" data-stat-collection></div>
       </div>
-      <ul class="identity-panel__facts">
-        <li class="fact" data-fact="experience">
-          <span class="fact__label">Years Experience</span>
-          <span class="fact__value">—</span>
-        </li>
-        <li class="fact" data-fact="projects">
-          <span class="fact__label">Projects</span>
-          <span class="fact__value">—</span>
-        </li>
-        <li class="fact" data-fact="focus">
-          <span class="fact__label">Focus Areas</span>
-          <span class="fact__value">—</span>
-        </li>
-      </ul>
-      <div class="identity-panel__status" data-status="availability">Status: Available</div>
-    </aside>
+    </section>
 
-    <section class="content-area" aria-label="Content Panels">
-      <section class="content-panel is-active" data-section="timeline">
-        <header class="content-panel__header">
-          <h2 class="content-panel__title">Timeline</h2>
-          <p class="content-panel__summary">Key roles and milestones</p>
-        </header>
-        <div class="content-panel__body">
-          <!-- JS will populate timeline entries -->
-          <div class="timeline" data-collection="timeline"></div>
-        </div>
-      </section>
+    <section class="section" id="projects">
+      <div class="section__header">
+        <div class="section__eyebrow">⚡ Featured Projects</div>
+        <h2 class="section__title">Projects</h2>
+      </div>
+      <div class="project-grid" data-projects></div>
+    </section>
 
-      <section class="content-panel" data-section="projects">
-        <header class="content-panel__header">
-          <h2 class="content-panel__title">Projects</h2>
-          <p class="content-panel__summary">Selected work with impact details</p>
-        </header>
-        <div class="content-panel__body">
-          <!-- JS will populate project cards -->
-          <div class="project-grid" data-collection="projects"></div>
-        </div>
-      </section>
+    <section class="section" id="skills">
+      <div class="section__header">
+        <div class="section__eyebrow">Capabilities</div>
+        <h2 class="section__title">Capabilities</h2>
+      </div>
+      <div class="capability-grid" data-capabilities></div>
+    </section>
 
-      <section class="content-panel" data-section="accomplishments">
-        <header class="content-panel__header">
-          <h2 class="content-panel__title">Accomplishments</h2>
-          <p class="content-panel__summary">Highlights and recognitions</p>
-        </header>
-        <div class="content-panel__body">
-          <!-- JS will populate accomplishment items -->
-          <ul class="accomplishment-list" data-collection="accomplishments"></ul>
-        </div>
-      </section>
+    <section class="section" id="experience">
+      <div class="section__header">
+        <div class="section__eyebrow">Experience</div>
+        <h2 class="section__title">Experience</h2>
+      </div>
+      <div class="experience-list" data-experience></div>
+    </section>
 
-      <section class="content-panel" data-section="roadmap">
-        <header class="content-panel__header">
-          <h2 class="content-panel__title">Roadmap</h2>
-          <p class="content-panel__summary">Near-term goals and experiments</p>
-        </header>
-        <div class="content-panel__body">
-          <!-- JS will populate roadmap items -->
-          <div class="roadmap" data-collection="roadmap"></div>
+    <section class="section" id="growth">
+      <div class="section__header">
+        <div class="section__eyebrow">Growth Path</div>
+        <h2 class="section__title">Growth Path</h2>
+      </div>
+      <div class="growth-path" data-growth></div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact-card glass" data-contact>
+        <div class="contact-card__copy">
+          <div class="section__eyebrow">Contact</div>
+          <h2 class="contact-card__title">Let's Connect</h2>
+          <p class="contact-card__lead" data-contact-pitch>
+            Open to full-time software engineering roles focused on reliable delivery and systems thinking. Ready to
+            contribute to teams that value clarity and ownership.
+          </p>
         </div>
-      </section>
+        <div class="contact-card__actions" data-contact-links></div>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="site-footer__primary">
-      <span class="site-footer__name">Edgar Colmenero</span>
-      <span class="site-footer__year">2024</span>
+  <footer class="footer">
+    <div class="footer__left">
+      <span>© 2026 Edgar Colmenero</span>
     </div>
-    <div class="site-footer__links">
-      <a class="site-footer__link" href="#" rel="noreferrer noopener">GitHub</a>
-      <a class="site-footer__link" href="#" rel="noreferrer noopener">LinkedIn</a>
-    </div>
+    <div class="footer__right" data-footer-tagline>Product-minded Full-Stack Software Engineer</div>
   </footer>
 </body>
 </html>
