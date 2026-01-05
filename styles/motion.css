@@ -1,8 +1,7 @@
 :root {
-  --dur-1: 180ms;
-  --dur-2: 240ms;
-  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --ease-in-out: cubic-bezier(0.4, 0.14, 0.3, 1);
+  --motion-fast: 160ms;
+  --motion-medium: 220ms;
+  --motion-ease: cubic-bezier(0.23, 0.72, 0.35, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -16,73 +15,55 @@
   }
 }
 
-.content-panel {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity var(--dur-2) var(--ease-out),
-    transform var(--dur-2) var(--ease-out);
-}
-
-.content-panel.is-active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.timeline-item,
+.section,
+.hero__content,
 .project-card,
-.roadmap-item,
-.accomplishment-item {
-  transition: transform var(--dur-1) var(--ease-out),
-    box-shadow var(--dur-1) var(--ease-out),
-    border-color var(--dur-1) var(--ease-out),
-    background var(--dur-1) var(--ease-out);
+.capability-card,
+.experience-card,
+.growth-item,
+.contact-card {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fade-up 500ms var(--motion-ease) forwards;
+}
+
+.section:nth-of-type(1) { animation-delay: 40ms; }
+.section:nth-of-type(2) { animation-delay: 80ms; }
+.section:nth-of-type(3) { animation-delay: 120ms; }
+.section:nth-of-type(4) { animation-delay: 160ms; }
+.section:nth-of-type(5) { animation-delay: 200ms; }
+.section:nth-of-type(6) { animation-delay: 240ms; }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (hover: hover) {
-  .timeline-item:hover,
   .project-card:hover,
-  .roadmap-item:hover,
-  .accomplishment-item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-2);
-    border-color: rgba(47, 122, 229, 0.4);
-    background: var(--color-surface);
+  .capability-card:hover,
+  .experience-card:hover,
+  .growth-item:hover,
+  .stat:hover,
+  .contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 44px rgba(0, 0, 0, 0.35);
+  }
+
+  .button:hover {
+    filter: brightness(1.02);
   }
 }
 
-.timeline-item:focus-visible,
-.project-card:focus-visible,
-.roadmap-item:focus-visible,
-.accomplishment-item:focus-visible {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-2);
-  border-color: rgba(47, 122, 229, 0.4);
-  background: var(--color-surface);
-}
-
-.nav-button {
-  transition: background var(--dur-1) var(--ease-out),
-    color var(--dur-1) var(--ease-out),
-    border-color var(--dur-1) var(--ease-out),
-    transform var(--dur-1) var(--ease-out),
-    box-shadow var(--dur-1) var(--ease-out);
-}
-
-@media (hover: hover) {
-  .nav-button:hover {
-    transform: translateY(-1px);
-  }
-}
-
-.nav-button.is-active {
-  transform: translateY(-1px);
-}
-
-.identity-panel,
-.content-area,
-.top-bar {
-  transition: box-shadow var(--dur-2) var(--ease-in-out),
-    border-color var(--dur-2) var(--ease-in-out),
-    transform var(--dur-2) var(--ease-in-out),
-    background var(--dur-2) var(--ease-in-out);
+.button {
+  transition: transform var(--motion-fast) var(--motion-ease),
+    box-shadow var(--motion-fast) var(--motion-ease),
+    background var(--motion-fast) var(--motion-ease),
+    border-color var(--motion-fast) var(--motion-ease);
 }
