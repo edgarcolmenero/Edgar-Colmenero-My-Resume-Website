@@ -1,110 +1,151 @@
 {
   "identity": {
     "name": "Edgar Colmenero",
-    "descriptor": "Product-minded software engineer shipping reliable systems.",
-    "status": "Available for senior product engineering roles",
+    "descriptor": "Product-minded Full-Stack Software Engineer focused on reliable client delivery.",
+    "status": "Early-career full-stack engineer available for opportunities",
     "focus": [
       "Full-stack engineering",
-      "Front-end systems",
-      "Automation & agents",
-      "Data-driven applications",
-      "Performance & UX"
+      "Client-facing delivery",
+      "Automation and scripting",
+      "Data-informed systems",
+      "Reliable user experiences"
     ],
     "metrics": {
-      "experience": 8,
-      "projects": 32,
-      "technologies": 26
+      "experience": 2,
+      "projects": 10,
+      "technologies": 12
     }
   },
   "timeline": [
     {
-      "title": "Senior Product Engineer",
-      "organization": "SwiftSend",
-      "time": "2023 — Present",
-      "impact": "Designed and built delivery automation features and a workflow rules engine that removed manual dispatch for 65% of orders and shortened SLA breach escalations from hours to minutes.",
-      "tags": ["TypeScript", "Node.js", "Rules engine", "Platform APIs"]
-    },
-    {
-      "title": "Full-Stack Engineer",
+      "title": "Full-Stack Software Engineer (Contract)",
       "organization": "Ravi’s Import Warehouse",
-      "time": "2021 — 2023",
-      "impact": "Partnered with executives to ship an e-commerce relaunch with inventory syncing, PDP personalization, and fulfillment dashboards; lifted online revenue by 28% YoY and reduced support tickets by 18%.",
-      "tags": ["Next.js", "React", "PostgreSQL", "Stripe"]
+      "time": "2025 — Present",
+      "impact": "Building and maintaining production web applications that support pricing updates, catalog management, and internal order workflows for a wholesale client.",
+      "tags": ["React", "Node.js", "REST APIs", "PostgreSQL"]
     },
     {
-      "title": "Systems Analyst",
+      "title": "Shift Manager",
+      "organization": "Adidas",
+      "time": "2025",
+      "impact": "Led floor operations, coordinated scheduling, and ensured consistent customer experience during high-traffic periods.",
+      "tags": ["Leadership", "Scheduling", "Customer experience", "Operations"]
+    },
+    {
+      "title": "Bilingual Financial Services Representative",
       "organization": "Wells Fargo",
-      "time": "2019 — 2021",
-      "impact": "Supported customer operations platforms, mapped data contracts between servicing teams, and automated compliance checks that cut manual QA cycles by two days per release.",
-      "tags": ["Process automation", "SQL", "Data mapping", "Compliance"]
+      "time": "2024",
+      "impact": "Delivered English and Spanish customer support in a regulated environment, resolving complex account issues and documenting outcomes accurately.",
+      "tags": ["Customer support", "Compliance", "Bilingual", "Problem solving"]
     },
     {
-      "title": "Team Lead, Digital Ops",
-      "organization": "Walmart",
-      "time": "2016 — 2019",
-      "impact": "Led a frontline team rolling out new handheld tooling; improved pick-path accuracy, mentored associates into tech-facing roles, and established feedback loops with product owners.",
-      "tags": ["Leadership", "Operational efficiency", "Training", "Customer focus"]
-    },
-    {
-      "title": "Computing Foundations + Portfolio Projects",
-      "organization": "University & Personal",
-      "time": "2014 — 2016",
-      "impact": "Completed academic coursework while building portfolio projects focused on interaction design, data visualization, and automation-first product thinking.",
-      "tags": ["JavaScript", "Python", "Data viz", "Accessibility"]
+      "title": "Additional Leadership & Retail Experience",
+      "organization": "Walmart, CVS Pharmacy",
+      "time": "2021 — 2023",
+      "impact": "Managed team coverage, trained associates on inventory systems, and maintained compliance standards while supporting high-volume customer needs.",
+      "tags": ["Team leadership", "Inventory", "Training", "Compliance"]
     }
   ],
   "projects": [
     {
-      "name": "SwiftSend automation suite",
-      "description": "Workflow rules, courier selection, and live-tracking overlays that keep dispatch hands-free while surfacing operational risk early.",
-      "stack": ["TypeScript", "Node.js", "PostgreSQL", "Web Workers"],
-      "outcome": "Reduced failed handoffs and ensured on-time delivery SLAs for regional partners.",
+      "name": "SwiftSend delivery portal",
+      "description": "Consulting engagement to refine courier assignment flows, add tracking views, and stabilize order processing for a delivery services startup.",
+      "stack": ["JavaScript", "Node.js", "PostgreSQL", "REST APIs"],
+      "outcome": "Improved reliability of dispatch tasks and clarified status visibility for operators.",
       "status": "live",
       "image": ""
     },
     {
-      "name": "Ravi’s Import Warehouse e-commerce",
-      "description": "Full-stack rebuild with performance budgets, inventory sync, and executive-friendly analytics to align merchandising and ops.",
-      "stack": ["Next.js", "React", "Stripe", "Edge caching"],
-      "outcome": "Launched a durable storefront that increased conversion and cut support contacts.",
+      "name": "ShopRavis inventory & ordering",
+      "description": "Wholesale catalog and ordering interface with search, pricing updates, and basic analytics for Ravi’s Import Warehouse.",
+      "stack": ["React", "Node.js", "PostgreSQL", "Stripe"],
+      "outcome": "Delivered a stable storefront and internal tools to reduce manual data entry.",
       "status": "live",
       "image": ""
     },
     {
-      "name": "Agentic QA + ops automations",
-      "description": "Built lightweight agent flows to validate UI states, summarize incident logs, and trigger runbooks without interrupting teams.",
-      "stack": ["JavaScript", "Workers", "Playwright", "Prompt tooling"],
-      "outcome": "Lowered regression detection time and reduced manual QA passes before release windows.",
-      "status": "in progress",
+      "name": "Realtor Demo Pro",
+      "description": "Front-end demo experience for real estate listings, featuring property search, map views, and lead capture forms.",
+      "stack": ["React", "CSS", "REST APIs", "Leaflet"],
+      "outcome": "Showcased ability to translate product requirements into interactive UI with clean data flows.",
+      "status": "prototype",
       "image": ""
     },
     {
       "name": "This resume site",
-      "description": "Compact, data-driven profile with worker-powered counters, SVG accents, and resilient loading that mirrors how I ship products.",
+      "description": "Data-driven personal site with Web Worker metrics, resilient loading, and structured resume data.",
       "stack": ["HTML", "CSS", "Vanilla JS", "Web Workers"],
-      "outcome": "Shows approach to thoughtful defaults, accessibility, and composable UI behavior.",
+      "outcome": "Demonstrates thoughtful defaults, accessibility, and transparent skill representation.",
       "status": "live",
+      "image": ""
+    },
+    {
+      "name": "Inventory checklist automation",
+      "description": "Lightweight scripts to automate reconciliation of purchase orders and stock counts for small business clients.",
+      "stack": ["Python", "Pandas", "CSV", "REST APIs"],
+      "outcome": "Reduced manual spreadsheet work and improved accuracy of weekly inventory reports.",
+      "status": "in progress",
+      "image": ""
+    },
+    {
+      "name": "Client support knowledge base",
+      "description": "Single-page application for bilingual FAQs and guided workflows for customer service teams.",
+      "stack": ["JavaScript", "HTML", "CSS", "LocalStorage"],
+      "outcome": "Enabled faster responses and consistent documentation across English and Spanish teams.",
+      "status": "live",
+      "image": ""
+    },
+    {
+      "name": "Shift scheduling dashboard",
+      "description": "Tool to visualize shift coverage, manage time-off requests, and surface staffing gaps for retail managers.",
+      "stack": ["React", "Node.js", "SQLite", "Chart.js"],
+      "outcome": "Helped store leads adjust staffing based on peak hours and reduce overtime conflicts.",
+      "status": "prototype",
+      "image": ""
+    },
+    {
+      "name": "Academic data analysis toolkit",
+      "description": "Course project exploring data cleaning, visualization, and statistical summaries for public datasets.",
+      "stack": ["Python", "NumPy", "Pandas", "Matplotlib"],
+      "outcome": "Built confidence in analytical thinking and communicating findings with visuals.",
+      "status": "completed",
+      "image": ""
+    },
+    {
+      "name": "Accessibility-first UI components",
+      "description": "Set of reusable form and navigation components with keyboard and screen reader support.",
+      "stack": ["HTML", "CSS", "JavaScript", "ARIA"],
+      "outcome": "Improved usability of personal projects and ensured consistent patterns across pages.",
+      "status": "completed",
+      "image": ""
+    },
+    {
+      "name": "Portfolio content manager",
+      "description": "Simple CMS-style interface to manage project entries, tags, and media links for personal sites.",
+      "stack": ["Node.js", "Express", "SQLite", "REST APIs"],
+      "outcome": "Streamlined updates to project pages without manual HTML edits.",
+      "status": "in progress",
       "image": ""
     }
   ],
   "accomplishments": [
-    "Led dispatch and storefront programs with cross-functional partners while coaching teammates into broader technical ownership.",
-    "Implemented automation and observability guardrails that shortened QA cycles and improved deployment confidence.",
-    "Built reusable design patterns and dashboards that aligned leadership with the state of operations in near real-time.",
-    "Balanced academic foundations with hands-on product delivery, focusing on data-informed decisions and accessibility."
+    "Shipped production full-stack features for real clients, translating requirements into reliable web applications.",
+    "Delivered bilingual customer support in finance, documenting regulated interactions accurately.",
+    "Led teams in retail settings, coordinating schedules and training associates on systems and processes.",
+    "Balanced academic work with engineering engagements, progressing from retail roles into full-stack development."
   ],
   "roadmap": [
     {
       "phase": "Now",
-      "summary": "Polishing portfolio storytelling, contributing to platform reliability work, and applying to teams shipping customer-facing systems."
+      "summary": "Deepening full-stack fundamentals, polishing portfolio projects, and applying to software engineering roles focused on client delivery."
     },
     {
       "phase": "Next",
-      "summary": "Deepening backend reliability patterns, expanding observability for automation flows, and pairing with designers on motion and accessibility." 
+      "summary": "Building larger systems with stronger backend depth, performance tuning, and better observability for automation flows."
     },
     {
       "phase": "Later",
-      "summary": "Pursuing senior engineering tracks focused on systems leadership, resilient automation, and thoughtful product delivery at scale."
+      "summary": "Growing into senior ownership of scalable architectures, leading reliability efforts, and mentoring teams through delivery."
     }
   ]
 }
