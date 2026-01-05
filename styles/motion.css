@@ -25,6 +25,28 @@
   transform: translateY(0);
 }
 
+.timeline-item,
+.project-card,
+.roadmap-item,
+.accomplishment-item {
+  transition: transform 180ms var(--motion-ease), box-shadow 180ms var(--motion-ease),
+    border-color 180ms var(--motion-ease), background 180ms var(--motion-ease);
+}
+
+.timeline-item:hover,
+.project-card:hover,
+.roadmap-item:hover,
+.accomplishment-item:hover,
+.timeline-item:focus-visible,
+.project-card:focus-visible,
+.roadmap-item:focus-visible,
+.accomplishment-item:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(10, 28, 60, 0.08);
+  border-color: rgba(47, 122, 229, 0.4);
+  background: var(--color-surface);
+}
+
 .nav-button {
   transition: background var(--motion-duration) var(--motion-ease),
     color var(--motion-duration) var(--motion-ease),
@@ -35,4 +57,16 @@
 .nav-button:hover,
 .nav-button:focus-visible {
   transform: translateY(-1px);
+}
+
+.nav-button.is-active {
+  transform: translateY(-1px);
+}
+
+.identity-panel,
+.content-area,
+.top-bar {
+  transition: box-shadow var(--motion-duration) var(--motion-ease),
+    border-color var(--motion-duration) var(--motion-ease),
+    transform var(--motion-duration) var(--motion-ease);
 }
