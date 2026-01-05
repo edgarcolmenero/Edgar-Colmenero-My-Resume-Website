@@ -1,0 +1,85 @@
+{
+  "identity": {
+    "name": "Edgar Colmenero",
+    "descriptor": "Product-minded frontend engineer building calm digital tools.",
+    "status": "Available for senior product engineering roles",
+    "focus": [
+      "Design systems & UI architecture",
+      "Interaction design & prototyping",
+      "Web performance and accessibility",
+      "Stakeholder-friendly storytelling"
+    ],
+    "metrics": {
+      "experience": 8,
+      "projects": 27,
+      "technologies": 22
+    }
+  },
+  "timeline": [
+    {
+      "title": "Senior Product Engineer",
+      "organization": "Northshore Analytics",
+      "time": "2022 — Present",
+      "impact": "Led a squad modernizing the customer insights platform; delivered a 40% faster reporting flow and lifted weekly active analysts by 18%.",
+      "tags": ["React", "TypeScript", "Design Systems", "Data Viz"]
+    },
+    {
+      "title": "Product Engineer",
+      "organization": "Axial Commerce",
+      "time": "2019 — 2022",
+      "impact": "Shipped experimentation tooling and checkout optimizations; reduced checkout abandonment by 9% and scaled A/B testing to 50+ concurrent tests.",
+      "tags": ["Next.js", "Experimentation", "Performance", "Growth"]
+    },
+    {
+      "title": "Frontend Engineer",
+      "organization": "Civic Labs",
+      "time": "2016 — 2019",
+      "impact": "Built accessible civic services portals used by 200k+ residents with WCAG AA compliance and a resilient component library shared across teams.",
+      "tags": ["Accessibility", "Component Libraries", "Node.js", "WCAG"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Insight Workbench",
+      "description": "Modular analytics workspace with guided storytelling and reusable chart templates for analysts and product managers.",
+      "stack": ["React", "D3", "Vite", "Playwright"],
+      "outcome": "Cut dashboard build time from days to hours and improved data trust scores by 24%.",
+      "status": "live"
+    },
+    {
+      "name": "Design System Uplift",
+      "description": "Rebuilt the design system with strict tokens, motion guidelines, and linted usage to unify five customer-facing products.",
+      "stack": ["TypeScript", "Storybook", "Figma API", "ESLint"],
+      "outcome": "Decreased UI defect rate by 32% and reduced net-new component requests by half.",
+      "status": "live"
+    },
+    {
+      "name": "Field Ops Mobile",
+      "description": "Offline-first mobile web app for field technicians with guided workflows and resilient syncing.",
+      "stack": ["PWA", "Service Workers", "Redux Toolkit", "Mapbox"],
+      "outcome": "Reduced data drop-offs by 28% and trimmed training time by one week per cohort.",
+      "status": "in progress"
+    },
+    {
+      "name": "Experiment Control Center",
+      "description": "Governance and observability console for experimentation with guardrails and template-driven rollouts.",
+      "stack": ["Next.js", "Node.js", "PostgreSQL", "Amplitude"],
+      "outcome": "Enabled safe rollouts with automatic kill-switches and standardized experiment reports.",
+      "status": "archived"
+    }
+  ],
+  "roadmap": [
+    {
+      "phase": "Now",
+      "summary": "Deepening systems thinking around accessibility automation and sustainable design token pipelines."
+    },
+    {
+      "phase": "Next",
+      "summary": "Exploring AI-assisted QA for UI regressions and guided prototyping for product discovery teams."
+    },
+    {
+      "phase": "Later",
+      "summary": "R&D on resilient offline-first experiences for complex enterprise workflows and cross-platform parity."
+    }
+  ]
+}
