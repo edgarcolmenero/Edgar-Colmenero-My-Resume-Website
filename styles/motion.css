@@ -28,6 +28,18 @@
   animation: fade-up 520ms var(--motion-ease) forwards;
 }
 
+.hero__surface,
+.hero__badge,
+.hero__title,
+.hero__subtitle,
+.hero__actions,
+.hero__stats,
+.hero__stats .stat {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
 .section__header { animation-delay: 40ms; }
 .hero__surface { animation-delay: 80ms; }
 .stat { animation-delay: 120ms; }
@@ -55,21 +67,21 @@
   }
 }
 
-@media (hover: hover) {
-  .project-card:hover,
-  .capability-card:hover,
-  .experience-card:hover,
-  .growth-item:hover,
-  .stat:hover,
-  .contact-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 44px rgba(0, 0, 0, 0.35);
-  }
+  @media (hover: hover) {
+    .project-card:hover,
+    .capability-card:hover,
+    .experience-card:hover,
+    .growth-item:hover,
+    .stat:hover,
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 44px rgba(0, 0, 0, 0.35);
+    }
 
-  .button:hover {
-    filter: brightness(1.02);
+    .button:hover {
+      filter: brightness(1.05);
+    }
   }
-}
 
 .button {
   transition: transform var(--motion-fast) var(--motion-ease),
