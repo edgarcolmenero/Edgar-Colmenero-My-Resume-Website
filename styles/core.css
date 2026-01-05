@@ -35,8 +35,8 @@ body {
   line-height: var(--line-height);
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  padding: var(--space-5) var(--space-6) var(--space-6);
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-6) var(--space-7);
 }
 
 h1,
@@ -80,17 +80,20 @@ a:focus-visible {
 .top-bar__identity {
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-2);
 }
 
 .top-bar__name {
-  font-size: 1.25rem;
-  letter-spacing: -0.01em;
+  font-size: 1.5rem;
+  letter-spacing: -0.015em;
 }
 
 .top-bar__subtitle {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
 }
 
 .top-bar__nav {
@@ -127,7 +130,7 @@ a:focus-visible {
 .layout {
   display: grid;
   grid-template-columns: 320px 1fr;
-  gap: var(--space-5);
+  gap: var(--space-6);
   align-items: start;
   width: min(1180px, 100%);
   margin: 0 auto;
@@ -144,6 +147,8 @@ a:focus-visible {
   flex-direction: column;
   gap: var(--space-5);
   min-height: 100%;
+  position: sticky;
+  top: var(--space-6);
 }
 
 .identity-panel__header {
@@ -153,12 +158,12 @@ a:focus-visible {
 }
 
 .identity-panel__name {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   letter-spacing: -0.01em;
 }
 
 .identity-panel__descriptor {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-muted);
 }
 
@@ -173,19 +178,25 @@ a:focus-visible {
 .fact {
   display: grid;
   gap: var(--space-1);
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .fact__label {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-muted);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .fact__value {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--color-text);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
 }
 
 .identity-panel__status {
@@ -196,6 +207,7 @@ a:focus-visible {
   padding: var(--space-2) var(--space-3);
   font-weight: 600;
   width: fit-content;
+  letter-spacing: 0.01em;
 }
 
 .content-area {
@@ -203,7 +215,7 @@ a:focus-visible {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-medium);
   box-shadow: var(--shadow-soft);
-  padding: var(--space-5);
+  padding: var(--space-6);
   min-height: 520px;
   display: flex;
   flex-direction: column;
@@ -229,7 +241,7 @@ a:focus-visible {
 }
 
 .content-panel__title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   letter-spacing: -0.01em;
 }
 
@@ -249,6 +261,55 @@ a:focus-visible {
 .roadmap {
   display: grid;
   gap: var(--space-3);
+}
+
+.timeline-item,
+.project-card,
+.roadmap-item,
+.accomplishment-item {
+  border-radius: var(--radius-medium);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: none;
+}
+
+.timeline-item h3,
+.project-card h3,
+.roadmap-item h3 {
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.timeline-item p,
+.project-card p,
+.roadmap-item p,
+.accomplishment-item span {
+  color: var(--color-muted);
+}
+
+.timeline-item__meta {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+.collection-fallback,
+.timeline > p,
+.project-grid > p,
+.roadmap > p {
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface-alt);
+  padding: var(--space-4);
+  color: var(--color-muted);
+  text-align: left;
+}
+
+.accomplishment-item {
+  background: var(--color-surface-alt);
+}
+
+.site-footer__name {
+  font-weight: 700;
 }
 
 .site-footer {

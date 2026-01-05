@@ -17,22 +17,60 @@
     }
   };
 
+  const formatNumber = (value) => {
+    const numericValue = Number(value);
+    if (Number.isFinite(numericValue)) {
+      return numericValue % 1 === 0 ? `${numericValue}` : numericValue.toFixed(1);
+    }
+    if (typeof value === 'string' && value.trim()) return value;
+    return '—';
+  };
+
+  const startDescriptorCycle = (descriptor, focus) => {
+    const roleNode = document.querySelector('.top-bar__role');
+    const descriptorNode = document.querySelector('.identity-panel__descriptor');
+    if (!roleNode || !descriptorNode) return;
+
+    const focusLine = Array.isArray(focus) && focus.length ? `Building for ${focus[0].toLowerCase()}` : null;
+    const options = [descriptor, 'Product-focused frontend engineer', 'Design-aware technologist', focusLine]
+      .filter((text) => typeof text === 'string' && text.trim())
+      .filter((text, index, arr) => arr.indexOf(text) === index);
+
+    if (!options.length) return;
+
+    roleNode.textContent = options[0];
+    descriptorNode.textContent = options[0];
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (options.length === 1 || prefersReducedMotion) return;
+
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % options.length;
+      const next = options[index];
+      roleNode.textContent = next;
+      descriptorNode.textContent = next;
+    }, 12000);
+  };
+
   const updateIdentity = (identity) => {
     if (!identity) return;
     const { descriptor, status, focus, metrics } = identity;
 
-    setText('.top-bar__role', descriptor || 'Product engineer');
-    setText('.identity-panel__descriptor', descriptor || 'Product-minded engineer');
+    const descriptorCopy = descriptor || 'Product-minded engineer';
+    setText('.top-bar__role', descriptorCopy);
+    setText('.identity-panel__descriptor', descriptorCopy);
 
     const statusNode = document.querySelector('[data-status="availability"]');
     if (statusNode) {
-      statusNode.textContent = `Status: ${status || 'Open to opportunities'}`;
+      const statusCopy = status || 'Available for thoughtful product teams';
+      statusNode.textContent = `Status: ${statusCopy}`;
     }
 
     const setFactValue = (key, value) => {
       const factNode = document.querySelector(`[data-fact="${key}"] .fact__value`);
       if (factNode && value !== undefined && value !== null) {
-        factNode.textContent = value;
+        factNode.textContent = formatNumber(value);
       }
     };
 
@@ -43,6 +81,8 @@
       ? focus.join(' · ')
       : 'Focused on thoughtful product engineering';
     setFactValue('focus', focusValue);
+
+    startDescriptorCycle(descriptorCopy, focus);
   };
 
   const applyCardChrome = (element) => {
@@ -50,7 +90,9 @@
     element.style.background = 'var(--color-surface)';
     element.style.borderRadius = 'var(--radius-medium)';
     element.style.padding = 'var(--space-4)';
-    element.style.transition = 'transform 160ms ease, background 160ms ease, box-shadow 160ms ease, border-color 160ms ease';
+    element.style.boxShadow = '0 4px 12px rgba(10, 28, 60, 0.04)';
+    element.style.transition =
+      'transform var(--motion-duration) var(--motion-ease), background var(--motion-duration) var(--motion-ease), box-shadow var(--motion-duration) var(--motion-ease), border-color var(--motion-duration) var(--motion-ease)';
     element.addEventListener('pointerenter', () => {
       element.style.transform = 'translateY(-2px)';
       element.style.background = 'var(--color-surface-alt)';
@@ -60,7 +102,7 @@
     element.addEventListener('pointerleave', () => {
       element.style.transform = 'translateY(0)';
       element.style.background = 'var(--color-surface)';
-      element.style.boxShadow = 'none';
+      element.style.boxShadow = '0 4px 12px rgba(10, 28, 60, 0.04)';
       element.style.borderColor = 'var(--color-border)';
     });
     element.addEventListener('focus', () => {
@@ -73,7 +115,7 @@
     element.addEventListener('blur', () => {
       element.style.transform = 'translateY(0)';
       element.style.background = 'var(--color-surface)';
-      element.style.boxShadow = 'none';
+      element.style.boxShadow = '0 4px 12px rgba(10, 28, 60, 0.04)';
       element.style.borderColor = 'var(--color-border)';
     });
   };
@@ -85,7 +127,8 @@
 
     if (!entries.length) {
       const fallback = document.createElement('p');
-      fallback.textContent = 'Timeline data will appear here once available.';
+      fallback.className = 'collection-fallback';
+      fallback.textContent = 'Timeline updates land here. Recent milestones will be posted shortly.';
       container.appendChild(fallback);
       return;
     }
@@ -110,7 +153,7 @@
 
       const time = document.createElement('span');
       time.textContent = entry.time;
-      time.style.color = 'var(--color-muted)';
+      time.className = 'timeline-item__meta';
       time.style.fontSize = '0.95rem';
 
       heading.appendChild(title);
@@ -122,7 +165,7 @@
       organization.style.color = 'var(--color-text)';
 
       const impact = document.createElement('p');
-      impact.textContent = entry.impact;
+      impact.textContent = entry.impact || 'Impact summary coming soon.';
       impact.style.marginTop = 'var(--space-2)';
 
       const tags = document.createElement('div');
@@ -159,7 +202,8 @@
 
     if (!projects.length) {
       const fallback = document.createElement('p');
-      fallback.textContent = 'Projects will populate soon.';
+      fallback.className = 'collection-fallback';
+      fallback.textContent = 'Projects are being documented. Delivery highlights will be added shortly.';
       container.appendChild(fallback);
       return;
     }
@@ -183,7 +227,7 @@
       name.style.margin = '0';
 
       const status = document.createElement('span');
-      status.textContent = project.status;
+      status.textContent = project.status || 'in progress';
       status.style.textTransform = 'capitalize';
       status.style.fontWeight = '600';
       status.style.fontSize = '0.9rem';
@@ -201,7 +245,7 @@
       stack.style.color = 'var(--color-text)';
 
       const outcome = document.createElement('p');
-      outcome.textContent = project.outcome;
+      outcome.textContent = project.outcome ? `Outcome: ${project.outcome}` : 'Outcome: shipping in progress.';
       outcome.style.marginTop = 'var(--space-2)';
 
       card.appendChild(header);
@@ -223,19 +267,19 @@
       {
         id: 'experience',
         label: 'Years of experience',
-        context: 'Building resilient web products and leading cross-functional pods.',
+        context: 'Hands-on leadership across product, design, and engineering squads.',
         value: metrics?.experience ?? 0,
       },
       {
         id: 'projects',
         label: 'Projects shipped',
-        context: 'End-to-end deliveries across analytics, commerce, and civic tech.',
+        context: 'End-to-end launches with measurable adoption and reliability.',
         value: metrics?.projects ?? 0,
       },
       {
         id: 'technologies',
         label: 'Technologies leveraged',
-        context: 'Balanced engineering depth with accessible, maintainable design.',
+        context: 'Pairing modern stacks with pragmatic delivery for maintainability.',
         value: metrics?.technologies ?? 0,
       },
     ];
@@ -295,7 +339,8 @@
 
     if (!items.length) {
       const fallback = document.createElement('p');
-      fallback.textContent = 'Roadmap will be published here.';
+      fallback.className = 'collection-fallback';
+      fallback.textContent = 'Roadmap will appear here with near-term bets and experiments.';
       container.appendChild(fallback);
       return;
     }
@@ -313,7 +358,7 @@
       phase.style.marginBottom = 'var(--space-2)';
 
       const summary = document.createElement('p');
-      summary.textContent = item.summary;
+      summary.textContent = item.summary || 'Details to follow.';
 
       card.appendChild(phase);
       card.appendChild(summary);
