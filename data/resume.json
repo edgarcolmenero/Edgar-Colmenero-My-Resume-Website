@@ -20,6 +20,7 @@
       "title": "SwiftSend",
       "subtitle": "My Consulting Company",
       "status": "Live",
+      "icon": "⬈",
       "description": "Consulting engagement to refine courier assignment flows, add tracking views, and stabilize order processing for a delivery services startup.",
       "tech": ["JavaScript", "Node.js", "PostgreSQL", "REST APIs"],
       "outcome": "Improved dispatch reliability and clarified real-time status visibility for operations teams."
@@ -28,6 +29,7 @@
       "title": "ShopRavi’s Wholesale & Retail",
       "subtitle": "Ravi’s Import Warehouse",
       "status": "Live",
+      "icon": "▢",
       "description": "Wholesale catalog and ordering interface featuring inventory search, pricing updates, and basic analytics for Ravi’s Import Warehouse.",
       "tech": ["React", "Node.js", "PostgreSQL", "Stripe"],
       "outcome": "Reduced manual data entry and delivered stable storefront tooling for a wholesale business."

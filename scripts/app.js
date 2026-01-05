@@ -113,6 +113,7 @@
       const media = document.createElement('div');
       media.className = 'project-card__media';
       media.setAttribute('role', 'presentation');
+      media.textContent = project.icon || '↗';
 
       const body = document.createElement('p');
       body.className = 'project-card__body';
@@ -222,6 +223,11 @@
   const renderContact = (contact = {}) => {
     const pitch = document.querySelector(selectors.contactPitch);
     if (pitch) pitch.textContent = contact.pitch || pitch.textContent;
+
+    if (contact.headline) {
+      const heading = document.querySelector('.contact-card__title');
+      if (heading) heading.textContent = contact.headline;
+    }
 
     const actions = document.querySelector(selectors.contactLinks);
     if (actions) {
