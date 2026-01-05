@@ -1,11 +1,19 @@
 (() => {
+  let resumeCache = null;
+
   const fetchResume = async (path) => {
+    if (resumeCache) return resumeCache;
+
     try {
       const response = await fetch(path, { cache: 'no-cache' });
       if (!response.ok) throw new Error(`Request failed with ${response.status}`);
-      return await response.json();
+      const parsed = await response.json();
+      resumeCache = parsed;
+      return parsed;
     } catch (error) {
       console.error('Unable to load resume data', error);
+      const fallback = document.querySelector('[data-status="availability"]');
+      if (fallback) fallback.textContent = 'Status: Loading interrupted — try refreshing.';
       return null;
     }
   };
@@ -26,13 +34,54 @@
     return '—';
   };
 
+  const createTimelineMarker = () => {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '16');
+    svg.setAttribute('height', '32');
+    svg.setAttribute('viewBox', '0 0 16 32');
+    svg.setAttribute('aria-hidden', 'true');
+
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', '8');
+    line.setAttribute('y1', '0');
+    line.setAttribute('x2', '8');
+    line.setAttribute('y2', '32');
+    line.setAttribute('stroke', 'var(--color-border-strong)');
+    line.setAttribute('stroke-width', '1.25');
+    line.setAttribute('stroke-linecap', 'round');
+
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('cx', '8');
+    circle.setAttribute('cy', '12');
+    circle.setAttribute('r', '5');
+    circle.setAttribute('fill', 'var(--color-surface)');
+    circle.setAttribute('stroke', 'var(--color-accent)');
+    circle.setAttribute('stroke-width', '2');
+
+    svg.appendChild(line);
+    svg.appendChild(circle);
+    return svg;
+  };
+
+  const createBadge = (text) => {
+    const tag = document.createElement('span');
+    tag.textContent = text;
+    tag.style.padding = '2px 8px';
+    tag.style.borderRadius = '999px';
+    tag.style.background = 'rgba(47, 122, 229, 0.12)';
+    tag.style.color = 'var(--color-accent)';
+    tag.style.fontWeight = '600';
+    tag.style.fontSize = '0.9rem';
+    return tag;
+  };
+
   const startDescriptorCycle = (descriptor, focus) => {
     const roleNode = document.querySelector('.top-bar__role');
     const descriptorNode = document.querySelector('.identity-panel__descriptor');
     if (!roleNode || !descriptorNode) return;
 
     const focusLine = Array.isArray(focus) && focus.length ? `Building for ${focus[0].toLowerCase()}` : null;
-    const options = [descriptor, 'Product-focused frontend engineer', 'Design-aware technologist', focusLine]
+    const options = [descriptor, 'Systems-focused product engineer', 'Delivery-minded technologist', focusLine]
       .filter((text) => typeof text === 'string' && text.trim())
       .filter((text, index, arr) => arr.indexOf(text) === index);
 
@@ -50,7 +99,7 @@
       const next = options[index];
       roleNode.textContent = next;
       descriptorNode.textContent = next;
-    }, 12000);
+    }, 14000);
   };
 
   const updateIdentity = (identity) => {
@@ -64,7 +113,10 @@
     const statusNode = document.querySelector('[data-status="availability"]');
     if (statusNode) {
       const statusCopy = status || 'Available for thoughtful product teams';
-      statusNode.textContent = `Status: ${statusCopy}`;
+      const now = new Date();
+      const daytime = now.getHours();
+      const micro = daytime < 12 ? 'Morning build window' : daytime < 18 ? 'Afternoon delivery mode' : 'Evening polish hour';
+      statusNode.textContent = `Status: ${statusCopy} — ${micro}`;
     }
 
     const setFactValue = (key, value) => {
@@ -77,10 +129,14 @@
     setFactValue('experience', metrics?.experience ?? '—');
     setFactValue('projects', metrics?.projects ?? '—');
 
-    const focusValue = Array.isArray(focus) && focus.length
-      ? focus.join(' · ')
-      : 'Focused on thoughtful product engineering';
+    const focusValue = Array.isArray(focus) && focus.length ? focus.join(' · ') : 'Focused on thoughtful product engineering';
     setFactValue('focus', focusValue);
+
+    const focusList = document.querySelector('.identity-panel__tags');
+    if (focusList && Array.isArray(focus)) {
+      focusList.innerHTML = '';
+      focus.slice(0, 4).forEach((item) => focusList.appendChild(createBadge(item)));
+    }
 
     startDescriptorCycle(descriptorCopy, focus);
   };
@@ -135,11 +191,23 @@
 
     const fragment = document.createDocumentFragment();
 
-    entries.forEach((entry) => {
+    entries.forEach((entry, index) => {
       const card = document.createElement('article');
       card.className = 'timeline-item';
       card.tabIndex = 0;
       applyCardChrome(card);
+
+      const layout = document.createElement('div');
+      layout.style.display = 'grid';
+      layout.style.gridTemplateColumns = 'auto 1fr';
+      layout.style.gap = 'var(--space-3)';
+
+      const marker = createTimelineMarker();
+      marker.style.marginTop = index === 0 ? 'var(--space-1)' : '0';
+
+      const content = document.createElement('div');
+      content.style.display = 'grid';
+      content.style.gap = 'var(--space-2)';
 
       const heading = document.createElement('div');
       heading.style.display = 'flex';
@@ -173,22 +241,16 @@
       tags.style.display = 'flex';
       tags.style.flexWrap = 'wrap';
       tags.style.gap = 'var(--space-2)';
-      (entry.tags || []).forEach((tagText) => {
-        const tag = document.createElement('span');
-        tag.textContent = tagText;
-        tag.style.padding = '2px 8px';
-        tag.style.borderRadius = '999px';
-        tag.style.background = 'rgba(47, 122, 229, 0.12)';
-        tag.style.color = 'var(--color-accent)';
-        tag.style.fontWeight = '600';
-        tag.style.fontSize = '0.85rem';
-        tags.appendChild(tag);
-      });
+      (entry.tags || []).forEach((tagText) => tags.appendChild(createBadge(tagText)));
 
-      card.appendChild(heading);
-      card.appendChild(organization);
-      card.appendChild(impact);
-      card.appendChild(tags);
+      content.appendChild(heading);
+      content.appendChild(organization);
+      content.appendChild(impact);
+      content.appendChild(tags);
+
+      layout.appendChild(marker);
+      layout.appendChild(content);
+      card.appendChild(layout);
       fragment.appendChild(card);
     });
 
@@ -236,6 +298,19 @@
       header.appendChild(name);
       header.appendChild(status);
 
+      const media = document.createElement('div');
+      media.style.width = '100%';
+      media.style.height = '150px';
+      media.style.borderRadius = 'var(--radius-medium)';
+      media.style.background = 'linear-gradient(135deg, rgba(47,122,229,0.12), rgba(47,122,229,0.04))';
+      media.style.display = 'flex';
+      media.style.alignItems = 'center';
+      media.style.justifyContent = 'center';
+      media.style.color = 'var(--color-muted)';
+      media.style.fontWeight = '600';
+      media.style.letterSpacing = '0.02em';
+      media.textContent = project.image ? 'Preview ready' : 'Image placeholder';
+
       const description = document.createElement('p');
       description.textContent = project.description;
 
@@ -248,17 +323,33 @@
       outcome.textContent = project.outcome ? `Outcome: ${project.outcome}` : 'Outcome: shipping in progress.';
       outcome.style.marginTop = 'var(--space-2)';
 
+      const divider = document.createElement('hr');
+      divider.style.border = 'none';
+      divider.style.height = '1px';
+      divider.style.background = 'var(--color-border)';
+      divider.style.margin = 'var(--space-3) 0';
+
       card.appendChild(header);
+      card.appendChild(media);
       card.appendChild(description);
       card.appendChild(stack);
       card.appendChild(outcome);
+      card.appendChild(divider);
+
+      const stackTags = document.createElement('div');
+      stackTags.style.display = 'flex';
+      stackTags.style.flexWrap = 'wrap';
+      stackTags.style.gap = 'var(--space-2)';
+      (project.stack || []).slice(0, 4).forEach((tech) => stackTags.appendChild(createBadge(tech)));
+      card.appendChild(stackTags);
+
       fragment.appendChild(card);
     });
 
     container.appendChild(fragment);
   };
 
-  const renderAccomplishments = (metrics) => {
+  const renderAccomplishments = (metrics, accomplishments = []) => {
     const list = document.querySelector('[data-collection="accomplishments"]');
     if (!list) return;
     list.innerHTML = '';
@@ -278,9 +369,15 @@
       },
       {
         id: 'technologies',
-        label: 'Technologies leveraged',
-        context: 'Pairing modern stacks with pragmatic delivery for maintainability.',
+        label: 'Technologies applied',
+        context: 'Modern stacks paired with pragmatic delivery and maintainability.',
         value: metrics?.technologies ?? 0,
+      },
+      {
+        id: 'focus',
+        label: 'Focus areas practiced',
+        context: 'Reinforced patterns across frontend systems, automation, and performance.',
+        value: metrics?.focus ?? 0,
       },
     ];
 
@@ -328,6 +425,41 @@
       fragment.appendChild(row);
     });
 
+    if (accomplishments.length) {
+      const divider = document.createElement('div');
+      divider.style.height = '1px';
+      divider.style.background = 'var(--color-border)';
+      divider.style.margin = 'var(--space-3) 0';
+      fragment.appendChild(divider);
+
+      accomplishments.forEach((item) => {
+        const textRow = document.createElement('div');
+        textRow.style.display = 'grid';
+        textRow.style.gridTemplateColumns = 'auto 1fr';
+        textRow.style.gap = 'var(--space-2)';
+        textRow.style.alignItems = 'center';
+        textRow.style.padding = 'var(--space-2) 0';
+
+        const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        icon.setAttribute('width', '16');
+        icon.setAttribute('height', '16');
+        icon.setAttribute('viewBox', '0 0 16 16');
+        icon.setAttribute('aria-hidden', 'true');
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', 'M6.2 10.3L3.5 7.6l-1 1 3.7 3.7 7.3-7.3-1-1z');
+        path.setAttribute('fill', 'var(--color-accent)');
+        icon.appendChild(path);
+
+        const copy = document.createElement('p');
+        copy.textContent = item;
+        copy.style.margin = '0';
+
+        textRow.appendChild(icon);
+        textRow.appendChild(copy);
+        fragment.appendChild(textRow);
+      });
+    }
+
     list.appendChild(fragment);
     startCounters(metricItems);
   };
@@ -353,14 +485,35 @@
       card.tabIndex = 0;
       applyCardChrome(card);
 
+      const phaseRow = document.createElement('div');
+      phaseRow.style.display = 'flex';
+      phaseRow.style.alignItems = 'center';
+      phaseRow.style.justifyContent = 'space-between';
+
       const phase = document.createElement('h3');
       phase.textContent = item.phase;
       phase.style.marginBottom = 'var(--space-2)';
 
+      const accent = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      accent.setAttribute('width', '64');
+      accent.setAttribute('height', '8');
+      accent.setAttribute('viewBox', '0 0 64 8');
+      accent.setAttribute('aria-hidden', 'true');
+      const accentPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      accentPath.setAttribute('d', 'M2 6c12-4 24-4 36 0s24 4 24 0');
+      accentPath.setAttribute('stroke', 'var(--color-accent)');
+      accentPath.setAttribute('stroke-width', '2');
+      accentPath.setAttribute('fill', 'none');
+      accentPath.setAttribute('stroke-linecap', 'round');
+      accent.appendChild(accentPath);
+
+      phaseRow.appendChild(phase);
+      phaseRow.appendChild(accent);
+
       const summary = document.createElement('p');
       summary.textContent = item.summary || 'Details to follow.';
 
-      card.appendChild(phase);
+      card.appendChild(phaseRow);
       card.appendChild(summary);
       fragment.appendChild(card);
     });
@@ -372,15 +525,37 @@
     const list = document.querySelector('[data-collection="accomplishments"]');
     if (!list || !Array.isArray(metricItems)) return;
 
-    const applyFinalValues = () => {
+    const data = resumeCache || {};
+    const timelineYears = Array.isArray(data.timeline)
+      ? data.timeline
+          .map((entry) => {
+            const match = String(entry.time || '').match(/(\d{4})/);
+            return match ? Number(match[1]) : null;
+          })
+          .filter((year) => Number.isFinite(year))
+      : [];
+    const derived = {
+      projectCount: Array.isArray(data.projects) ? data.projects.length : 0,
+      focusCount: Array.isArray(data.identity?.focus) ? data.identity.focus.length : 0,
+      timelineYears,
+    };
+
+    const applyFinalValues = (values) => {
       metricItems.forEach((item) => {
         const node = list.querySelector(`[data-counter-id="${item.id}"]`);
-        if (node) node.textContent = String(item.value);
+        const nextValue = values[item.id];
+        if (node && nextValue !== undefined) node.textContent = String(nextValue);
       });
     };
 
     if (typeof Worker === 'undefined') {
-      applyFinalValues();
+      const fallbackValues = metricItems.reduce((acc, item) => {
+        acc[item.id] = item.value;
+        return acc;
+      }, {});
+      fallbackValues.focus = derived.focusCount || fallbackValues.focus;
+      fallbackValues.projects = derived.projectCount || fallbackValues.projects;
+      applyFinalValues(fallbackValues);
       return;
     }
 
@@ -394,7 +569,7 @@
       const node = list.querySelector(`[data-counter-id="${id}"]`);
       if (node && typeof value === 'number') {
         node.textContent = String(value);
-        const targetValue = metricItems.find((item) => item.id === id)?.value ?? value;
+        const targetValue = event.data.targetValue || value;
         if (value >= targetValue) {
           pending.delete(id);
           if (pending.size === 0) {
@@ -405,13 +580,18 @@
     });
 
     worker.addEventListener('error', () => {
-      applyFinalValues();
+      const fallbackValues = metricItems.reduce((acc, item) => {
+        acc[item.id] = item.value;
+        return acc;
+      }, {});
+      applyFinalValues(fallbackValues);
       worker.terminate();
     });
 
     worker.postMessage({
       type: 'start',
       metrics: metricItems.map((item) => ({ id: item.id, value: item.value })),
+      derived,
       reducedMotion,
     });
   };
@@ -423,7 +603,7 @@
     updateIdentity(data.identity);
     renderTimeline(data.timeline);
     renderProjects(data.projects);
-    renderAccomplishments(data.identity?.metrics);
+    renderAccomplishments(data.identity?.metrics, data.accomplishments || []);
     renderRoadmap(data.roadmap);
   };
 
