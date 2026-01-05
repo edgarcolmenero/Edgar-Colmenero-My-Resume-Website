@@ -1,85 +1,110 @@
 {
   "identity": {
     "name": "Edgar Colmenero",
-    "descriptor": "Product-minded frontend engineer building calm digital tools.",
+    "descriptor": "Product-minded software engineer shipping reliable systems.",
     "status": "Available for senior product engineering roles",
     "focus": [
-      "Design systems & UI architecture",
-      "Interaction design & prototyping",
-      "Web performance and accessibility",
-      "Stakeholder-friendly storytelling"
+      "Full-stack engineering",
+      "Front-end systems",
+      "Automation & agents",
+      "Data-driven applications",
+      "Performance & UX"
     ],
     "metrics": {
       "experience": 8,
-      "projects": 27,
-      "technologies": 22
+      "projects": 32,
+      "technologies": 26
     }
   },
   "timeline": [
     {
       "title": "Senior Product Engineer",
-      "organization": "Northshore Analytics",
-      "time": "2022 — Present",
-      "impact": "Led a squad modernizing the customer insights platform; delivered a 40% faster reporting flow and lifted weekly active analysts by 18%.",
-      "tags": ["React", "TypeScript", "Design Systems", "Data Viz"]
+      "organization": "SwiftSend",
+      "time": "2023 — Present",
+      "impact": "Designed and built delivery automation features and a workflow rules engine that removed manual dispatch for 65% of orders and shortened SLA breach escalations from hours to minutes.",
+      "tags": ["TypeScript", "Node.js", "Rules engine", "Platform APIs"]
     },
     {
-      "title": "Product Engineer",
-      "organization": "Axial Commerce",
-      "time": "2019 — 2022",
-      "impact": "Shipped experimentation tooling and checkout optimizations; reduced checkout abandonment by 9% and scaled A/B testing to 50+ concurrent tests.",
-      "tags": ["Next.js", "Experimentation", "Performance", "Growth"]
+      "title": "Full-Stack Engineer",
+      "organization": "Ravi’s Import Warehouse",
+      "time": "2021 — 2023",
+      "impact": "Partnered with executives to ship an e-commerce relaunch with inventory syncing, PDP personalization, and fulfillment dashboards; lifted online revenue by 28% YoY and reduced support tickets by 18%.",
+      "tags": ["Next.js", "React", "PostgreSQL", "Stripe"]
     },
     {
-      "title": "Frontend Engineer",
-      "organization": "Civic Labs",
+      "title": "Systems Analyst",
+      "organization": "Wells Fargo",
+      "time": "2019 — 2021",
+      "impact": "Supported customer operations platforms, mapped data contracts between servicing teams, and automated compliance checks that cut manual QA cycles by two days per release.",
+      "tags": ["Process automation", "SQL", "Data mapping", "Compliance"]
+    },
+    {
+      "title": "Team Lead, Digital Ops",
+      "organization": "Walmart",
       "time": "2016 — 2019",
-      "impact": "Built accessible civic services portals used by 200k+ residents with WCAG AA compliance and a resilient component library shared across teams.",
-      "tags": ["Accessibility", "Component Libraries", "Node.js", "WCAG"]
+      "impact": "Led a frontline team rolling out new handheld tooling; improved pick-path accuracy, mentored associates into tech-facing roles, and established feedback loops with product owners.",
+      "tags": ["Leadership", "Operational efficiency", "Training", "Customer focus"]
+    },
+    {
+      "title": "Computing Foundations + Portfolio Projects",
+      "organization": "University & Personal",
+      "time": "2014 — 2016",
+      "impact": "Completed academic coursework while building portfolio projects focused on interaction design, data visualization, and automation-first product thinking.",
+      "tags": ["JavaScript", "Python", "Data viz", "Accessibility"]
     }
   ],
   "projects": [
     {
-      "name": "Insight Workbench",
-      "description": "Modular analytics workspace with guided storytelling and reusable chart templates for analysts and product managers.",
-      "stack": ["React", "D3", "Vite", "Playwright"],
-      "outcome": "Cut dashboard build time from days to hours and improved data trust scores by 24%.",
-      "status": "live"
+      "name": "SwiftSend automation suite",
+      "description": "Workflow rules, courier selection, and live-tracking overlays that keep dispatch hands-free while surfacing operational risk early.",
+      "stack": ["TypeScript", "Node.js", "PostgreSQL", "Web Workers"],
+      "outcome": "Reduced failed handoffs and ensured on-time delivery SLAs for regional partners.",
+      "status": "live",
+      "image": ""
     },
     {
-      "name": "Design System Uplift",
-      "description": "Rebuilt the design system with strict tokens, motion guidelines, and linted usage to unify five customer-facing products.",
-      "stack": ["TypeScript", "Storybook", "Figma API", "ESLint"],
-      "outcome": "Decreased UI defect rate by 32% and reduced net-new component requests by half.",
-      "status": "live"
+      "name": "Ravi’s Import Warehouse e-commerce",
+      "description": "Full-stack rebuild with performance budgets, inventory sync, and executive-friendly analytics to align merchandising and ops.",
+      "stack": ["Next.js", "React", "Stripe", "Edge caching"],
+      "outcome": "Launched a durable storefront that increased conversion and cut support contacts.",
+      "status": "live",
+      "image": ""
     },
     {
-      "name": "Field Ops Mobile",
-      "description": "Offline-first mobile web app for field technicians with guided workflows and resilient syncing.",
-      "stack": ["PWA", "Service Workers", "Redux Toolkit", "Mapbox"],
-      "outcome": "Reduced data drop-offs by 28% and trimmed training time by one week per cohort.",
-      "status": "in progress"
+      "name": "Agentic QA + ops automations",
+      "description": "Built lightweight agent flows to validate UI states, summarize incident logs, and trigger runbooks without interrupting teams.",
+      "stack": ["JavaScript", "Workers", "Playwright", "Prompt tooling"],
+      "outcome": "Lowered regression detection time and reduced manual QA passes before release windows.",
+      "status": "in progress",
+      "image": ""
     },
     {
-      "name": "Experiment Control Center",
-      "description": "Governance and observability console for experimentation with guardrails and template-driven rollouts.",
-      "stack": ["Next.js", "Node.js", "PostgreSQL", "Amplitude"],
-      "outcome": "Enabled safe rollouts with automatic kill-switches and standardized experiment reports.",
-      "status": "archived"
+      "name": "This resume site",
+      "description": "Compact, data-driven profile with worker-powered counters, SVG accents, and resilient loading that mirrors how I ship products.",
+      "stack": ["HTML", "CSS", "Vanilla JS", "Web Workers"],
+      "outcome": "Shows approach to thoughtful defaults, accessibility, and composable UI behavior.",
+      "status": "live",
+      "image": ""
     }
+  ],
+  "accomplishments": [
+    "Led dispatch and storefront programs with cross-functional partners while coaching teammates into broader technical ownership.",
+    "Implemented automation and observability guardrails that shortened QA cycles and improved deployment confidence.",
+    "Built reusable design patterns and dashboards that aligned leadership with the state of operations in near real-time.",
+    "Balanced academic foundations with hands-on product delivery, focusing on data-informed decisions and accessibility."
   ],
   "roadmap": [
     {
       "phase": "Now",
-      "summary": "Deepening systems thinking around accessibility automation and sustainable design token pipelines."
+      "summary": "Polishing portfolio storytelling, contributing to platform reliability work, and applying to teams shipping customer-facing systems."
     },
     {
       "phase": "Next",
-      "summary": "Exploring AI-assisted QA for UI regressions and guided prototyping for product discovery teams."
+      "summary": "Deepening backend reliability patterns, expanding observability for automation flows, and pairing with designers on motion and accessibility." 
     },
     {
       "phase": "Later",
-      "summary": "R&D on resilient offline-first experiences for complex enterprise workflows and cross-platform parity."
+      "summary": "Pursuing senior engineering tracks focused on systems leadership, resilient automation, and thoughtful product delivery at scale."
     }
   ]
 }
