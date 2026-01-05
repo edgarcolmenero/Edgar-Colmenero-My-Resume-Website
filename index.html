@@ -10,89 +10,116 @@
   <script src="scripts/interactions.js" defer></script>
 </head>
 <body>
-  <header class="floating-header" aria-label="Primary">
-    <div class="brand">
-      <span class="brand__mark" aria-hidden="true">EC</span>
-      <span class="brand__label">Edgar Colmenero</span>
+  <div class="page-bg" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="shell">
+      <div class="header-pill">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true">EC</span>
+          <span class="brand__label">Edgar Colmenero</span>
+        </div>
+        <nav class="nav" aria-label="Section links">
+          <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="nav__links" id="nav-menu">
+            <a class="nav__link" href="#projects">Projects</a>
+            <a class="nav__link" href="#skills">Skills</a>
+            <a class="nav__link" href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
     </div>
-    <nav class="nav" aria-label="Section links">
-      <a class="nav__link" href="#projects">Projects</a>
-      <a class="nav__link" href="#skills">Skills</a>
-      <a class="nav__link" href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <main class="page">
-    <section class="hero section" id="top">
-      <div class="hero__content">
-        <div class="hero__badge" data-availability>Available for opportunities</div>
-        <h1 class="hero__title">
-          <span class="hero__name" data-first-name>Edgar</span>
-          <span class="hero__name hero__name--accent" data-last-name>Colmenero</span>
-        </h1>
-        <p class="hero__subtitle" data-headline>
-          Full-stack software engineer crafting reliable, production-ready systems with modern web technologies
-        </p>
-        <div class="hero__actions">
-          <a class="button button--primary" href="#projects" data-primary-cta>Explore Work</a>
-          <a class="button button--ghost" href="#contact" data-secondary-cta>Connect</a>
-        </div>
-        <div class="hero__stats" data-stat-collection></div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section__header">
-        <div class="section__eyebrow">⚡ Featured Projects</div>
-        <h2 class="section__title">Projects</h2>
-      </div>
-      <div class="project-grid" data-projects></div>
-    </section>
-
-    <section class="section" id="skills">
-      <div class="section__header">
-        <div class="section__eyebrow">Capabilities</div>
-        <h2 class="section__title">Capabilities</h2>
-      </div>
-      <div class="capability-grid" data-capabilities></div>
-    </section>
-
-    <section class="section" id="experience">
-      <div class="section__header">
-        <div class="section__eyebrow">Experience</div>
-        <h2 class="section__title">Experience</h2>
-      </div>
-      <div class="experience-list" data-experience></div>
-    </section>
-
-    <section class="section" id="growth">
-      <div class="section__header">
-        <div class="section__eyebrow">Growth Path</div>
-        <h2 class="section__title">Growth Path</h2>
-      </div>
-      <div class="growth-path" data-growth></div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="contact-card glass" data-contact>
-        <div class="contact-card__copy">
-          <div class="section__eyebrow">Contact</div>
-          <h2 class="contact-card__title">Let's Connect</h2>
-          <p class="contact-card__lead" data-contact-pitch>
-            Open to full-time software engineering roles focused on reliable delivery and systems thinking. Ready to
-            contribute to teams that value clarity and ownership.
+  <main>
+    <section class="hero" id="top">
+      <div class="shell">
+        <div class="hero__orbs" aria-hidden="true"></div>
+        <div class="hero__surface">
+          <div class="hero__badge" data-availability>
+            <span class="dot"></span> Available for opportunities
+          </div>
+          <h1 class="hero__title">
+            <span class="hero__name" data-first-name>Edgar</span>
+            <span class="hero__name hero__name--accent" data-last-name>Colmenero</span>
+          </h1>
+          <p class="hero__subtitle" data-headline>
+            Full-stack software engineer crafting reliable, production-ready systems with modern web technologies
           </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#projects" data-primary-cta>Explore Work</a>
+            <a class="button button--ghost" href="#contact" data-secondary-cta>Connect</a>
+          </div>
+          <div class="hero__stats" data-stat-collection></div>
         </div>
-        <div class="contact-card__actions" data-contact-links></div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="shell">
+        <div class="section__header">
+          <div class="section__eyebrow">⚡ Featured Projects</div>
+          <h2 class="section__title">Projects</h2>
+        </div>
+        <div class="project-grid" data-projects></div>
+      </div>
+    </section>
+
+    <section class="capabilities" id="skills">
+      <div class="shell">
+        <div class="section__header">
+          <div class="section__eyebrow">Capabilities</div>
+          <h2 class="section__title">Capabilities</h2>
+        </div>
+        <div class="capability-grid" data-capabilities></div>
+      </div>
+    </section>
+
+    <section class="experience" id="experience">
+      <div class="shell">
+        <div class="section__header">
+          <div class="section__eyebrow">Experience</div>
+          <h2 class="section__title">Experience</h2>
+        </div>
+        <div class="experience-list" data-experience></div>
+      </div>
+    </section>
+
+    <section class="growth" id="growth">
+      <div class="shell">
+        <div class="section__header">
+          <div class="section__eyebrow">Growth Path</div>
+          <h2 class="section__title">Growth Path</h2>
+        </div>
+        <div class="growth-path" data-growth></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="shell">
+        <div class="contact-card glass" data-contact>
+          <div class="contact-card__copy">
+            <div class="section__eyebrow">Contact</div>
+            <h2 class="contact-card__title">Let's Connect</h2>
+            <p class="contact-card__lead" data-contact-pitch>
+              Open to full-time software engineering roles focused on reliable delivery and systems thinking. Ready to
+              contribute to teams that value clarity and ownership.
+            </p>
+          </div>
+          <div class="contact-card__actions" data-contact-links></div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="footer__left">
-      <span>© 2026 Edgar Colmenero</span>
+  <footer class="site-footer">
+    <div class="shell footer__inner">
+      <div class="footer__left">
+        <span>© 2026 Edgar Colmenero</span>
+      </div>
+      <div class="footer__right" data-footer-tagline>Product-minded Full-Stack Software Engineer</div>
     </div>
-    <div class="footer__right" data-footer-tagline>Product-minded Full-Stack Software Engineer</div>
   </footer>
 </body>
 </html>
