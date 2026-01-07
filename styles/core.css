@@ -119,10 +119,11 @@ button:focus-visible {
   justify-content: space-between;
   gap: 16px;
   padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: var(--radius-pill);
-  backdrop-filter: blur(22px);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   pointer-events: auto;
 }
@@ -278,10 +279,11 @@ main {
   gap: 10px;
   padding: 10px 16px;
   border-radius: var(--radius-pill);
-  background: linear-gradient(to right, rgba(34, 211, 238, 0.14), rgba(59, 130, 246, 0.14));
-  border: 1px solid rgba(34, 211, 238, 0.22);
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(59, 130, 246, 0.18));
+  border: 1px solid rgba(34, 211, 238, 0.35);
   backdrop-filter: blur(14px);
-  color: #22d3ee;
+  -webkit-backdrop-filter: blur(14px);
+  color: rgb(34, 211, 238);
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -290,8 +292,8 @@ main {
 }
 
 .hero__badge-icon {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   stroke: currentColor;
   fill: none;
   stroke-width: 1.8;
@@ -314,17 +316,18 @@ main {
 }
 
 .hero__name {
-  background: linear-gradient(90deg, #ffffff 0%, #d1d5db 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e5e7eb 45%, #cbd5e1 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   font-weight: 400;
   letter-spacing: -0.02em;
   display: block;
+  line-height: 1.05;
 }
 
 .hero__name--accent {
-  background: var(--grad-accent);
+  background: linear-gradient(180deg, rgb(34, 211, 238) 0%, rgb(59, 130, 246) 50%, rgb(168, 85, 247) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
