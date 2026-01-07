@@ -315,9 +315,10 @@ main {
 }
 
 .hero__name {
-  background: linear-gradient(to right, #ffffff 0%, #cfd3da 100%);
+  background: linear-gradient(to right, #ffffff 0%, #b6bcc6 100%);
   background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
   font-weight: 400;
   letter-spacing: -0.02em;
@@ -326,16 +327,17 @@ main {
 }
 
 .hero__name--accent {
-  background: linear-gradient(to right, rgb(34, 211, 238) 0%, rgb(59, 130, 246) 55%, rgb(168, 85, 247) 100%);
+  background: linear-gradient(to right, #00e5ff 0%, #1f6fff 52%, #a855f7 100%);
   background-clip: text;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
   font-weight: 400;
 }
 
 .hero__subtitle {
   max-width: 720px;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.6;
@@ -367,7 +369,7 @@ main {
 }
 
 .button--primary {
-  background: linear-gradient(120deg, #22d3ee 0%, #3b82f6 62%);
+  background: linear-gradient(to right, #00c9e8 0%, #2563eb 62%);
   color: #ffffff;
   box-shadow: 0 18px 46px rgba(59, 130, 246, 0.3);
 }
@@ -381,7 +383,6 @@ main {
 
 .button:hover {
   transform: translateY(-2px);
-  filter: brightness(1.05);
 }
 
 .button--primary:hover {
