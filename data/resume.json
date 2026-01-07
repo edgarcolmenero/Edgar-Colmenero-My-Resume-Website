@@ -9,7 +9,7 @@
       "secondary": "Connect"
     },
     "stats": [
-      { "id": "experience", "label": "Years Experience", "value": 2, "suffix": " yrs" },
+      { "id": "experience", "label": "Experience", "value": 2, "suffix": " YRS" },
       { "id": "projects", "label": "Projects", "value": 10, "suffix": "+" },
       { "id": "live", "label": "Live Systems", "value": 3 },
       { "id": "uptime", "label": "Uptime Goal", "value": 100, "suffix": "%" }
