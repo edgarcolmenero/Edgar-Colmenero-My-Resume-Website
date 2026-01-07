@@ -157,6 +157,7 @@ button:focus-visible {
 .brand__label {
   color: #ffffff;
   display: inline-flex;
+  font-weight: 400;
 }
 
 .nav {
@@ -212,7 +213,7 @@ button:focus-visible {
 }
 
 main {
-  padding-top: 150px;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   gap: 120px;
@@ -226,7 +227,7 @@ main {
 
 .hero .shell {
   position: relative;
-  padding: 64px 0 12px;
+  padding: 150px 0 12px;
 }
 
 .hero::before {
@@ -277,10 +278,10 @@ main {
   gap: 10px;
   padding: 10px 16px;
   border-radius: var(--radius-pill);
-  background: linear-gradient(to right, rgba(34, 211, 238, 0.2), rgba(59, 130, 246, 0.2));
+  background: linear-gradient(to right, rgba(34, 211, 238, 0.18), rgba(59, 130, 246, 0.18));
   border: 1px solid rgba(34, 211, 238, 0.3);
-  backdrop-filter: blur(12px);
-  color: rgb(34, 211, 238);
+  backdrop-filter: blur(14px);
+  color: #22d3ee;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -288,12 +289,14 @@ main {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
-.hero__badge .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background: #22d3ee;
-  box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+.hero__badge-icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 
@@ -311,7 +314,9 @@ main {
 }
 
 .hero__name {
-  color: #ffffff;
+  background: linear-gradient(90deg, #ffffff 0%, #d1d5db 100%);
+  -webkit-background-clip: text;
+  color: transparent;
   font-weight: 400;
   letter-spacing: -0.02em;
   display: block;
@@ -326,7 +331,7 @@ main {
 
 .hero__subtitle {
   max-width: 720px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
   font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.6;
@@ -349,6 +354,7 @@ main {
   gap: 10px;
   padding: 12px 20px;
   border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
   font-weight: 400;
   letter-spacing: 0.08em;
   border: 1px solid transparent;
