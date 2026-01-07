@@ -119,8 +119,8 @@ button:focus-visible {
   justify-content: space-between;
   gap: 16px;
   padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(6, 10, 18, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: var(--radius-pill);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -129,7 +129,7 @@ button:focus-visible {
 }
 
 .header-pill.is-scrolled {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(6, 10, 18, 0.5);
   border-color: rgba(255, 255, 255, 0.14);
 }
 
@@ -228,7 +228,7 @@ main {
 
 .hero .shell {
   position: relative;
-  padding: 150px 0 12px;
+  padding: 130px 0 12px;
 }
 
 .hero::before {
@@ -279,14 +279,13 @@ main {
   gap: 10px;
   padding: 10px 16px;
   border-radius: var(--radius-pill);
-  background: linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(59, 130, 246, 0.18));
-  border: 1px solid rgba(34, 211, 238, 0.35);
+  background: rgba(6, 10, 18, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   color: rgb(34, 211, 238);
   font-weight: 400;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   font-size: 12px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
@@ -316,7 +315,7 @@ main {
 }
 
 .hero__name {
-  background: linear-gradient(180deg, #ffffff 0%, #e5e7eb 45%, #cbd5e1 100%);
+  background: linear-gradient(to right, #ffffff 0%, #cfd3da 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -327,7 +326,7 @@ main {
 }
 
 .hero__name--accent {
-  background: linear-gradient(180deg, rgb(34, 211, 238) 0%, rgb(59, 130, 246) 50%, rgb(168, 85, 247) 100%);
+  background: linear-gradient(to right, rgb(34, 211, 238) 0%, rgb(59, 130, 246) 55%, rgb(168, 85, 247) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
