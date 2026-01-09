@@ -9,7 +9,7 @@
   --purple-2: #8b5cf6;
   --purple-3: #a855f7;
   --purple-gradient: linear-gradient(135deg, #7b6cff 0%, #8b5cf6 45%, #a855f7 100%);
-  --purple-soft: linear-gradient(90deg, rgba(123, 108, 255, 0.1), rgba(168, 85, 247, 0.1));
+  --purple-soft: linear-gradient(90deg, rgba(123, 108, 255, 0.12), rgba(168, 85, 247, 0.12));
   font-family: 'EB Garamond', serif;
 }
 
@@ -37,10 +37,11 @@ img {
 
 .page {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .container {
-  width: min(1320px, 92vw);
+  width: min(1340px, 92vw);
   margin: 0 auto;
 }
 
@@ -186,15 +187,19 @@ img {
 
 .hello-lines {
   display: flex;
-  gap: 6px;
+  align-items: center;
+  justify-content: center;
 }
 
-.hello-lines span {
-  width: 20px;
-  height: 3px;
-  border-radius: 999px;
-  background: var(--purple-gradient);
-  transform: rotate(-20deg);
+.hello-lines svg {
+  width: 90px;
+  height: 16px;
+}
+
+.hello-lines path {
+  stroke: var(--purple-2);
+  stroke-width: 3;
+  stroke-linecap: round;
 }
 
 .hero-title {
@@ -237,13 +242,13 @@ img {
 
 .orbit {
   position: absolute;
-  width: clamp(480px, 54vw, 700px);
-  height: clamp(480px, 54vw, 700px);
+  width: clamp(520px, 60vw, 740px);
+  height: clamp(520px, 60vw, 740px);
   border-radius: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: orbit 26s linear infinite;
+  animation: orbit 24s linear infinite;
   z-index: 3;
   pointer-events: none;
 }
@@ -260,7 +265,7 @@ img {
 }
 
 .orbit-logo > * {
-  animation: counter-orbit 26s linear infinite;
+  animation: counter-orbit 24s linear infinite;
 }
 
 .orbit-logo img {
@@ -282,20 +287,20 @@ img {
 }
 
 .orbit-logo--ravi {
-  top: 6%;
+  top: 4%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .orbit-logo--swift {
-  top: 40%;
+  top: 45%;
   right: -2%;
   transform: translate(50%, -50%);
 }
 
 .orbit-logo--colmenero {
   bottom: 8%;
-  left: 20%;
+  left: 18%;
   transform: translate(-50%, 50%);
 }
 
@@ -397,6 +402,13 @@ img {
   fill: #ffffff;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: reveal 0.8s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+
 @keyframes orbit {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -426,6 +438,17 @@ img {
   }
 }
 
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 1100px) {
   .hero-grid {
     grid-template-columns: repeat(1, 1fr);
@@ -438,13 +461,22 @@ img {
     grid-column: 1 / -1;
   }
 
+  .hero-quote {
+    padding-top: 12px;
+  }
+
   .hero-experience {
     text-align: center;
     padding-top: 24px;
   }
 
+  .stars {
+    justify-content: center;
+  }
+
   .hero-socials {
     position: static;
     margin-top: 24px;
+    justify-content: center;
   }
 }
