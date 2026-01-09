@@ -25,7 +25,7 @@ app.innerHTML = `
 
     <main class="hero">
       <div class="container hero-grid">
-        <aside class="hero-quote">
+        <aside class="hero-quote reveal" style="--delay: 0.1s;">
           <div class="quote-mark">“</div>
           <p>
             <span class="gradient-text">Colmenero</span> engineers with intention — building scalable, reliable web and
@@ -33,13 +33,15 @@ app.innerHTML = `
           </p>
         </aside>
 
-        <section class="hero-center">
+        <section class="hero-center reveal" style="--delay: 0.2s;">
           <div class="hello-wrap">
             <div class="hello-pill">Hello!</div>
             <div class="hello-lines" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
+              <svg viewBox="0 0 90 16" role="presentation">
+                <path d="M5 8h16" />
+                <path d="M35 8h16" />
+                <path d="M65 8h16" />
+              </svg>
             </div>
           </div>
 
@@ -90,7 +92,7 @@ app.innerHTML = `
           </div>
         </section>
 
-        <aside class="hero-experience">
+        <aside class="hero-experience reveal" style="--delay: 0.3s;">
           <div class="stars" aria-hidden="true">
             <span class="star"></span>
             <span class="star"></span>
@@ -103,7 +105,7 @@ app.innerHTML = `
         </aside>
       </div>
 
-      <div class="container hero-socials">
+      <div class="container hero-socials reveal" style="--delay: 0.4s;">
         <a class="social-icon social-icon--linkedin" href="#" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path
