@@ -1,7 +1,7 @@
 const app = document.getElementById("app");
 
 app.innerHTML = `
-  <nav class="nav">
+  <nav class="nav reveal-down">
     <div class="nav-inner">
       <ul class="nav-left">
         <li class="active">Home</li>
@@ -24,7 +24,7 @@ app.innerHTML = `
 
   <section class="hero">
     <!-- LEFT QUOTE -->
-    <div class="hero-quote reveal-left">
+    <div class="hero-quote reveal-left reveal-delay-2">
       <div class="quote-mark">❝</div>
       <p>
         <span class="gradient-text">Colmenero</span> engineers with intention —
@@ -33,13 +33,13 @@ app.innerHTML = `
     </div>
 
     <!-- CENTER -->
-    <div class="hero-center">
-      <div class="hello-pill reveal-top">
+    <div class="hero-center reveal reveal-delay-1">
+      <div class="hello-pill">
         Hello!
         <span class="hello-lines"></span>
       </div>
 
-      <h1 class="hero-title reveal">
+      <h1 class="hero-title">
         I’m <span class="gradient-text">Edgar Colmenero</span>, Full-Stack Engineer &<br />
         <span class="data-line">
           Data Science Scholar
@@ -47,11 +47,21 @@ app.innerHTML = `
         </span>
       </h1>
 
-      <div class="portrait-wrapper reveal">
-        <div class="purple-orbit">
-          <img class="orbit orbit-1" src="assets/Ravis.png" />
-          <img class="orbit orbit-2" src="assets/S.png" />
-          <img class="orbit orbit-3" src="assets/Clogo.png" />
+      <div class="portrait-wrapper">
+        <div class="orbit-clip">
+          <div class="purple-orbit"></div>
+        </div>
+
+        <div class="orbit-system">
+          <div class="orbiting-logo" style="--start-angle: -30deg; --duration: 14s;">
+            <img src="assets/Ravis.png" alt="Ravis logo" />
+          </div>
+          <div class="orbiting-logo" style="--start-angle: 90deg; --duration: 18s;">
+            <img src="assets/S.png" alt="S logo" />
+          </div>
+          <div class="orbiting-logo" style="--start-angle: 200deg; --duration: 16s;">
+            <img src="assets/Clogo.png" alt="C logo" />
+          </div>
         </div>
 
         <img class="portrait" src="assets/MeT.png" alt="Edgar Portrait" />
@@ -64,36 +74,86 @@ app.innerHTML = `
     </div>
 
     <!-- RIGHT EXPERIENCE -->
-    <div class="hero-exp reveal-right">
+    <div class="hero-exp reveal-right reveal-delay-2">
       <div class="stars">
-        <span></span><span></span><span></span><span></span><span></span>
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="starGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7b61ff"/>
+              <stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
+          <polygon points="12,2 15,9 22,9 16.8,13.5 19,21 12,16.6 5,21 7.2,13.5 2,9 9,9" fill="none" stroke="url(#starGradient)" stroke-width="1.4"/>
+        </svg>
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="starGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7b61ff"/>
+              <stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
+          <polygon points="12,2 15,9 22,9 16.8,13.5 19,21 12,16.6 5,21 7.2,13.5 2,9 9,9" fill="none" stroke="url(#starGradient)" stroke-width="1.4"/>
+        </svg>
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="starGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7b61ff"/>
+              <stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
+          <polygon points="12,2 15,9 22,9 16.8,13.5 19,21 12,16.6 5,21 7.2,13.5 2,9 9,9" fill="none" stroke="url(#starGradient)" stroke-width="1.4"/>
+        </svg>
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="starGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7b61ff"/>
+              <stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
+          <polygon points="12,2 15,9 22,9 16.8,13.5 19,21 12,16.6 5,21 7.2,13.5 2,9 9,9" fill="none" stroke="url(#starGradient)" stroke-width="1.4"/>
+        </svg>
+        <svg class="star" viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="starGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#7b61ff"/>
+              <stop offset="100%" stop-color="#a78bfa"/>
+            </linearGradient>
+          </defs>
+          <polygon points="12,2 15,9 22,9 16.8,13.5 19,21 12,16.6 5,21 7.2,13.5 2,9 9,9" fill="none" stroke="url(#starGradient)" stroke-width="1.4"/>
+        </svg>
       </div>
-      <div class="years">02</div>
+      <div class="years">00</div>
       <small>Experience</small>
     </div>
 
     <!-- SOCIALS -->
-    <div class="socials reveal-bottom">
-      <a class="icon linkedin" href="#"><img src="assets/linkedint.png"></a>
-      <a class="icon github" href="#"><img src="assets/github.png"></a>
-      <a class="icon behance" href="#"><img src="assets/behance.png"></a>
-      <a class="icon email" href="#"><img src="assets/email.png"></a>
+    <div class="socials reveal-bottom reveal-delay-3">
+      <a class="icon linkedin" href="#"><img src="assets/linkedint.png" alt="LinkedIn"></a>
+      <a class="icon github" href="#"><img src="assets/github.png" alt="GitHub"></a>
+      <a class="icon behance" href="#"><img src="assets/behance.png" alt="Behance"></a>
+      <a class="icon email" href="#"><img src="assets/email.png" alt="Email"></a>
     </div>
   </section>
 `;
 
 // EXPERIENCE COUNT + STAR FILL
 let years = document.querySelector(".years");
-let stars = document.querySelectorAll(".stars span");
+let stars = document.querySelectorAll(".stars .star");
 
 let count = 0;
+let starIndex = 0;
 const interval = setInterval(() => {
   if (count < 2) {
-    count++;
-    years.textContent = "0" + count;
-    stars[count * 2 - 1]?.classList.add("filled");
-  } else {
-    stars.forEach(s => s.classList.add("filled"));
+    count += 1;
+    years.textContent = `0${count}`;
+  }
+
+  if (starIndex < stars.length) {
+    stars[starIndex].classList.add("filled");
+    starIndex += 1;
+  }
+
+  if (count >= 2 && starIndex >= stars.length) {
     clearInterval(interval);
   }
-}, 400);
+}, 320);
