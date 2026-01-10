@@ -318,6 +318,17 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+.about .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about .card p {
+  max-width: 32ch;
+}
+
 .card {
   background: #fff;
   border-radius: var(--radius-lg);
