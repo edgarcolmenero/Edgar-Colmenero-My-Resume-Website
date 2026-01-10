@@ -253,10 +253,14 @@ main {
 .social-icon {
   width: 26px;
   height: 26px;
-  object-fit: contain;
-  filter: grayscale(100%) brightness(1.4) contrast(0.9);
-  opacity: 0.7;
-  transition: filter var(--transition), opacity var(--transition), transform var(--transition);
+  background-color: #cfd3da;
+  transition: background-color var(--transition), transform var(--transition);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
 }
 
 .social-link:hover {
@@ -264,9 +268,43 @@ main {
 }
 
 .social-link:hover .social-icon {
-  filter: none;
-  opacity: 1;
   transform: scale(1.05);
+}
+
+.social-icon--linkedin {
+  -webkit-mask-image: url("assets/linkedint.png");
+  mask-image: url("assets/linkedint.png");
+}
+
+.social-icon--github {
+  -webkit-mask-image: url("assets/github.png");
+  mask-image: url("assets/github.png");
+}
+
+.social-icon--behance {
+  -webkit-mask-image: url("assets/behance.png");
+  mask-image: url("assets/behance.png");
+}
+
+.social-icon--email {
+  -webkit-mask-image: url("assets/email.png");
+  mask-image: url("assets/email.png");
+}
+
+.social-link:hover .social-icon--linkedin {
+  background-color: #0a66c2;
+}
+
+.social-link:hover .social-icon--github {
+  background-color: #111827;
+}
+
+.social-link:hover .social-icon--behance {
+  background-color: #1769ff;
+}
+
+.social-link:hover .social-icon--email {
+  background-color: #475569;
 }
 
 .about {
