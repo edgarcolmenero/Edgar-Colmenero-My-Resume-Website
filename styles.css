@@ -250,53 +250,21 @@ main {
   transition: transform var(--transition);
 }
 
-.social-link img {
-  width: 24px;
-  height: 24px;
+.social-icon {
+  width: 26px;
+  height: 26px;
   object-fit: contain;
   filter: grayscale(1) brightness(0.7) opacity(0.8);
-  transition: filter var(--transition);
-}
-
-.social-link svg {
-  display: block;
-  width: 24px;
-  height: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  transition: fill var(--transition), stroke var(--transition);
-  color: var(--color-slate-500);
-}
-
-.social-link .is-hidden {
-  display: none;
+  transition: filter var(--transition), transform var(--transition);
 }
 
 .social-link:hover {
   transform: scale(1.1);
 }
 
-.social-link:hover img {
+.social-link:hover .social-icon {
   filter: none;
-}
-
-.social-link:hover svg {
-  fill: currentColor;
-  stroke: currentColor;
-}
-
-.social-link:nth-child(1):hover svg {
-  color: #0a66c2;
-}
-
-.social-link:nth-child(2):hover svg,
-.social-link:nth-child(4):hover svg {
-  color: #000;
-}
-
-.social-link:nth-child(3):hover svg {
-  color: #1769ff;
+  transform: scale(1.05);
 }
 
 .about {
