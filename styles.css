@@ -250,6 +250,14 @@ main {
   transition: transform var(--transition);
 }
 
+.social-link img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0.7) opacity(0.8);
+  transition: filter var(--transition);
+}
+
 .social-link svg {
   width: 24px;
   height: 24px;
@@ -260,8 +268,16 @@ main {
   color: var(--color-slate-500);
 }
 
+.social-link .is-hidden {
+  display: none;
+}
+
 .social-link:hover {
   transform: scale(1.1);
+}
+
+.social-link:hover img {
+  filter: none;
 }
 
 .social-link:hover svg {
