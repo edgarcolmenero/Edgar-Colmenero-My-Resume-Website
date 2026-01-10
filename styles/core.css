@@ -126,6 +126,8 @@ body {
   font-size: 48px;
   font-weight: 700;
   margin: 0 0 26px;
+  position: relative;
+  z-index: 2;
 }
 
 .data-line {
@@ -221,10 +223,10 @@ body {
 .orbit-clip {
   position: absolute;
   width: 520px;
-  height: 360px;
+  height: 320px;
   overflow: hidden;
   left: 50%;
-  bottom: -140px;
+  bottom: -220px;
   transform: translateX(-50%);
   z-index: 1;
 }
