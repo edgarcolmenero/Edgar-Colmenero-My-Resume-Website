@@ -31,9 +31,10 @@ body {
   background: #000;
   border-radius: 999px;
   padding: 16px 36px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 48px;
+  column-gap: 48px;
   transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.45s ease;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
@@ -46,6 +47,14 @@ body {
   margin: 0;
   color: rgba(255, 255, 255, 0.82);
   font-weight: 600;
+}
+
+.nav-left {
+  justify-self: end;
+}
+
+.nav-right {
+  justify-self: start;
 }
 
 .nav-inner:hover {
@@ -120,6 +129,9 @@ body {
   max-width: 640px;
   z-index: 3;
   opacity: 0;
+  background: transparent;
+  filter: none;
+  backdrop-filter: none;
 }
 
 .hero-title {
@@ -128,6 +140,10 @@ body {
   margin: 0 0 26px;
   position: relative;
   z-index: 2;
+  background: transparent;
+  box-shadow: none;
+  filter: none;
+  backdrop-filter: none;
 }
 
 .data-line {
