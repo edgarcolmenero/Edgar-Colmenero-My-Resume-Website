@@ -223,10 +223,10 @@ body {
 .orbit-clip {
   position: absolute;
   width: 520px;
-  height: 320px;
+  height: 250px;
   overflow: hidden;
   left: 50%;
-  bottom: -220px;
+  bottom: -350px;
   transform: translateX(-50%);
   z-index: 1;
 }
