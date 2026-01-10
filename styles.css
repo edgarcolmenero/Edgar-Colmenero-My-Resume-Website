@@ -254,8 +254,9 @@ main {
   width: 26px;
   height: 26px;
   object-fit: contain;
-  filter: grayscale(1) brightness(0.7) opacity(0.8);
-  transition: filter var(--transition), transform var(--transition);
+  filter: grayscale(100%) brightness(1.4) contrast(0.9);
+  opacity: 0.7;
+  transition: filter var(--transition), opacity var(--transition), transform var(--transition);
 }
 
 .social-link:hover {
@@ -264,6 +265,7 @@ main {
 
 .social-link:hover .social-icon {
   filter: none;
+  opacity: 1;
   transform: scale(1.05);
 }
 
