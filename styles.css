@@ -360,6 +360,10 @@ main {
   line-height: 1.6;
 }
 
+.experience .experience-company {
+  color: var(--color-blue-700);
+}
+
 .card__icon {
   width: 64px;
   height: 64px;
