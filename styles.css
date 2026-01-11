@@ -410,7 +410,7 @@ main {
 }
 
 .meta {
-  color: var(--color-slate-500);
+  color: var(--color-blue-700);
   margin-top: 4px;
 }
 
@@ -553,7 +553,7 @@ main {
   width: 20px;
   height: 20px;
   fill: none;
-  stroke: var(--color-slate-500);
+  stroke: var(--color-blue-700);
   stroke-width: 2;
   transition: transform var(--transition);
 }
