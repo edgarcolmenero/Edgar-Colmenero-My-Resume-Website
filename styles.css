@@ -84,17 +84,21 @@ main {
   gap: 24px;
   width: min(100%, var(--container-max));
   margin: 0 auto;
-  padding: 20px var(--page-padding);
+  padding: 8px var(--page-padding);
 }
 
 .nav__logo {
   display: inline-flex;
   align-items: center;
+  overflow: visible;
 }
 
 .nav__logo img {
-  height: clamp(96px, 10vw, 144px);
+  height: clamp(40px, 5vw, 56px);
+  max-height: 56px;
   width: auto;
+  transform: scale(2.2);
+  transform-origin: left center;
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
 }
 
@@ -118,7 +122,7 @@ main {
 }
 
 .nav__logo:hover img {
-  transform: scale(1.02);
+  transform: scale(2.24);
   opacity: 0.95;
 }
 
