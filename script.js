@@ -1,4 +1,5 @@
 const revealItems = document.querySelectorAll('.reveal');
+const nav = document.querySelector('.nav');
 
 const setDelay = (element) => {
   const delay = element.getAttribute('data-delay');
@@ -27,8 +28,18 @@ revealItems.forEach((item) => {
   observer.observe(item);
 });
 
+const updateNavState = () => {
+  if (!nav) {
+    return;
+  }
+  nav.classList.toggle('nav--scrolled', window.scrollY > 20);
+};
+
+window.addEventListener('scroll', updateNavState, { passive: true });
+
 window.addEventListener('load', () => {
   document.querySelectorAll('#hero .reveal').forEach((item) => {
     item.classList.add('is-visible');
   });
+  updateNavState();
 });

@@ -37,6 +37,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   background: var(--gradient-page);
@@ -56,6 +60,62 @@ a {
 
 main {
   overflow: hidden;
+}
+
+.nav {
+  padding: 24px var(--page-padding);
+  background: transparent;
+  box-shadow: none;
+  transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
+  position: relative;
+  z-index: 2;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav__logo img {
+  height: 36px;
+  width: auto;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav__link {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, text-shadow 0.2s ease-out;
+}
+
+.nav__link:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
+}
+
+.nav__logo:hover img {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+.nav--scrolled {
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
 }
 
 .section {
@@ -660,11 +720,29 @@ main {
     --page-padding: 16px;
   }
 
+  .nav__links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
   .hero__actions {
     flex-direction: column;
   }
 
   .contact__cta {
     flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .nav,
+  .nav__link,
+  .nav__logo img {
+    transition: none;
   }
 }
