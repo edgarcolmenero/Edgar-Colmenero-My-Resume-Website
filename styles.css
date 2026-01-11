@@ -209,7 +209,15 @@ main {
   padding: 12px 32px;
   border-radius: var(--radius-full);
   font-weight: 600;
+  border: 1px solid transparent;
   transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.button__icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  fill: currentColor;
 }
 
 .button--primary {
@@ -228,6 +236,17 @@ main {
   color: var(--color-blue-600);
   background: #fff;
   box-shadow: var(--shadow-lg);
+}
+
+.button--ghost {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: none;
+}
+
+.button--ghost:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .button:hover {
@@ -572,6 +591,9 @@ main {
 .contact__cta {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .reveal {
@@ -591,6 +613,10 @@ main {
   }
 
   .hero__actions {
+    flex-direction: column;
+  }
+
+  .contact__cta {
     flex-direction: column;
   }
 }
