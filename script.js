@@ -32,7 +32,7 @@ const updateNavState = () => {
   if (!nav) {
     return;
   }
-  nav.classList.toggle('nav--scrolled', window.scrollY > 20);
+  nav.classList.toggle('nav--scrolled', window.scrollY > 10);
 };
 
 window.addEventListener('scroll', updateNavState, { passive: true });
