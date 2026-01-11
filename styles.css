@@ -1,5 +1,5 @@
 :root {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --color-slate-50: #f8fafc;
   --color-slate-100: #f1f5f9;
   --color-slate-200: #e2e8f0;
@@ -39,8 +39,6 @@
 
 body {
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.6;
   background: var(--gradient-page);
   color: var(--color-slate-600);
   min-height: 100vh;
@@ -80,9 +78,7 @@ main {
 
 .section-header h2 {
   font-size: clamp(36px, 5vw, 48px);
-  font-weight: 600;
   color: var(--color-slate-800);
-  line-height: 1;
   margin-bottom: 16px;
 }
 
@@ -90,7 +86,6 @@ main {
   max-width: 640px;
   margin: 0 auto;
   color: var(--color-slate-500);
-  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -177,26 +172,24 @@ main {
 
 .hero__title {
   font-size: clamp(60px, 6vw, 72px);
-  font-weight: 400;
+  font-weight: 700;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  line-height: 1;
   margin-bottom: 16px;
 }
 
 .hero__subtitle {
   font-size: clamp(20px, 3vw, 24px);
   color: var(--color-slate-600);
-  line-height: clamp(28px, 3vw, 32px);
   margin-bottom: 16px;
 }
 
 .hero__description {
   font-size: 16px;
   color: var(--color-slate-500);
-  line-height: 1.625;
+  line-height: 1.6;
   max-width: 720px;
   margin: 0 auto 32px;
 }
@@ -359,20 +352,16 @@ main {
 
 .card h3 {
   color: var(--color-slate-800);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32px;
   margin-bottom: 12px;
 }
 
 .card p {
   color: var(--color-slate-500);
-  font-size: 16px;
   line-height: 1.6;
 }
 
 .experience .experience-company {
-  color: var(--color-blue-600);
+  color: var(--color-blue-700);
 }
 
 .card__icon {
@@ -425,9 +414,7 @@ main {
 }
 
 .experience-company {
-  color: var(--color-blue-600);
-  font-size: 16px;
-  line-height: 24px;
+  color: var(--color-blue-700);
   margin-top: 4px;
 }
 
@@ -437,7 +424,6 @@ main {
   padding: 8px 16px;
   border-radius: var(--radius-full);
   font-size: 14px;
-  line-height: 20px;
 }
 
 .tag-list {
@@ -451,7 +437,6 @@ main {
   padding: 4px 12px;
   border-radius: var(--radius-full);
   font-size: 14px;
-  line-height: 20px;
   background: linear-gradient(90deg, #eff6ff, #faf5ff);
   color: var(--color-blue-700);
 }
@@ -566,9 +551,6 @@ main {
 
 .project-card__header h3 {
   color: var(--color-slate-800);
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 32px;
 }
 
 .project-link svg {
@@ -586,7 +568,6 @@ main {
 
 .projects p {
   color: var(--color-slate-500);
-  font-size: 16px;
   line-height: 1.6;
 }
 
@@ -597,14 +578,10 @@ main {
 
 .contact .section-header h2 {
   color: #fff;
-  font-size: clamp(36px, 5vw, 48px);
-  line-height: 1;
 }
 
 .contact .section-header p {
   color: #dbeafe;
-  font-size: 18px;
-  line-height: 1.67;
 }
 
 .contact .section-divider {
