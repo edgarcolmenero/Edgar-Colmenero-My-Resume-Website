@@ -758,10 +758,26 @@ main {
     --page-padding: 16px;
   }
 
-  .nav__links {
+  .nav__container {
+    padding: 4px var(--page-padding);
     gap: 16px;
-    flex-wrap: wrap;
+  }
+
+  .nav__logo img {
+    height: clamp(32px, 7vw, 42px);
+    transform: scale(1.8);
+  }
+
+  .nav__links {
+    gap: 12px;
+    flex-wrap: nowrap;
     justify-content: flex-end;
+    white-space: nowrap;
+  }
+
+  .nav__link {
+    font-size: 12px;
+    white-space: nowrap;
   }
 
   .hero__actions {
