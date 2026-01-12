@@ -695,6 +695,12 @@ main {
   backdrop-filter: blur(12px);
 }
 
+.contact-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .contact-card__icon {
   width: 48px;
   height: 48px;
