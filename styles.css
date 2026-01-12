@@ -38,6 +38,8 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed rgba(255, 255, 255, 0.2);
 }
 
 html,
@@ -50,6 +52,19 @@ body {
   background: var(--gradient-page);
   color: var(--color-slate-600);
   min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  border-radius: var(--radius-full);
 }
 
 #app,
@@ -751,6 +766,15 @@ main {
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.site-footer {
+  background: #0b132b;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  padding: 16px var(--page-padding);
 }
 
 @media (max-width: 767px) {
